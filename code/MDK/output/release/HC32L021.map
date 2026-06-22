@@ -1,0 +1,1440 @@
+Component: ARM Compiler 6.10.1 Tool: armlink [5d142800]
+
+==============================================================================
+
+Section Cross References
+
+    system_hc32l021.o(.text.SystemCoreClockUpdate) refers to sysctrl.o(.text.SYSCTRL_HclkFreqGet) for SYSCTRL_HclkFreqGet
+    system_hc32l021.o(.text.SystemCoreClockUpdate) refers to system_hc32l021.o(.data.SystemCoreClock) for SystemCoreClock
+    system_hc32l021.o(.ARM.exidx.text.SystemCoreClockUpdate) refers to system_hc32l021.o(.text.SystemCoreClockUpdate) for [Anonymous Symbol]
+    system_hc32l021.o(.text.SystemInit) refers to system_hc32l021.o(.text.SystemCoreClockUpdate) for SystemCoreClockUpdate
+    system_hc32l021.o(.ARM.exidx.text.SystemInit) refers to system_hc32l021.o(.text.SystemInit) for [Anonymous Symbol]
+    system_hc32l021.o(.text.$Sub$$main) refers to system_hc32l021.o(.text.SystemInit) for SystemInit
+    system_hc32l021.o(.text.$Sub$$main) refers to main.o(.text.main) for $Super$$main
+    system_hc32l021.o(.ARM.exidx.text.$Sub$$main) refers to system_hc32l021.o(.text.$Sub$$main) for [Anonymous Symbol]
+    startup_hc32l021.o(RESET) refers to startup_hc32l021.o(STACK) for __initial_sp
+    startup_hc32l021.o(RESET) refers to startup_hc32l021.o(.text) for Reset_Handler
+    startup_hc32l021.o(RESET) refers to interrupts_hc32l021.o(.text.HardFault_Handler) for HardFault_Handler
+    startup_hc32l021.o(RESET) refers to interrupts_hc32l021.o(.text.SysTick_Handler) for SysTick_Handler
+    startup_hc32l021.o(RESET) refers to interrupts_hc32l021.o(.text.PORTA_IRQHandler) for PORTA_IRQHandler
+    startup_hc32l021.o(RESET) refers to interrupts_hc32l021.o(.text.PORTB_IRQHandler) for PORTB_IRQHandler
+    startup_hc32l021.o(RESET) refers to interrupts_hc32l021.o(.text.ATIM3_IRQHandler) for ATIM3_IRQHandler
+    startup_hc32l021.o(RESET) refers to interrupts_hc32l021.o(.text.LPUART0_IRQHandler) for LPUART0_IRQHandler
+    startup_hc32l021.o(RESET) refers to interrupts_hc32l021.o(.text.LPUART1_IRQHandler) for LPUART1_IRQHandler
+    startup_hc32l021.o(RESET) refers to interrupts_hc32l021.o(.text.SPI_IRQHandler) for SPI_IRQHandler
+    startup_hc32l021.o(RESET) refers to interrupts_hc32l021.o(.text.CTIM0_IRQHandler) for CTIM0_IRQHandler
+    startup_hc32l021.o(RESET) refers to interrupts_hc32l021.o(.text.CTIM1_IRQHandler) for CTIM1_IRQHandler
+    startup_hc32l021.o(RESET) refers to interrupts_hc32l021.o(.text.HSI2C_IRQHandler) for HSI2C_IRQHandler
+    startup_hc32l021.o(RESET) refers to interrupts_hc32l021.o(.text.IWDT_IRQHandler) for IWDT_IRQHandler
+    startup_hc32l021.o(RESET) refers to interrupts_hc32l021.o(.text.RTC_IRQHandler) for RTC_IRQHandler
+    startup_hc32l021.o(RESET) refers to interrupts_hc32l021.o(.text.ADC_IRQHandler) for ADC_IRQHandler
+    startup_hc32l021.o(RESET) refers to interrupts_hc32l021.o(.text.VC0_IRQHandler) for VC0_IRQHandler
+    startup_hc32l021.o(RESET) refers to interrupts_hc32l021.o(.text.VC1_IRQHandler) for VC1_IRQHandler
+    startup_hc32l021.o(RESET) refers to interrupts_hc32l021.o(.text.LVD_IRQHandler) for LVD_IRQHandler
+    startup_hc32l021.o(RESET) refers to interrupts_hc32l021.o(.text.FLASH_IRQHandler) for FLASH_IRQHandler
+    startup_hc32l021.o(RESET) refers to interrupts_hc32l021.o(.text.CTRIM_CLKDET_IRQHandler) for CTRIM_CLKDET_IRQHandler
+    startup_hc32l021.o(.text) refers to system_hc32l021.o(.text.SystemInit) for SystemInit
+    startup_hc32l021.o(.text) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    board_stkhc32l021.o(.text.STK_EvsyncConfig) refers to memseta.o(.text) for __aeabi_memclr4
+    board_stkhc32l021.o(.text.STK_EvsyncConfig) refers to gpio.o(.text.GPIO_StcInit) for GPIO_StcInit
+    board_stkhc32l021.o(.text.STK_EvsyncConfig) refers to sysctrl.o(.text.SYSCTRL_PeriphClockEnable) for SYSCTRL_PeriphClockEnable
+    board_stkhc32l021.o(.text.STK_EvsyncConfig) refers to gpio.o(.text.GPIO_Init) for GPIO_Init
+    board_stkhc32l021.o(.text.STK_EvsyncConfig) refers to interrupts_hc32l021.o(.text.EnableNvic) for EnableNvic
+    board_stkhc32l021.o(.ARM.exidx.text.STK_EvsyncConfig) refers to board_stkhc32l021.o(.text.STK_EvsyncConfig) for [Anonymous Symbol]
+    board_stkhc32l021.o(.text.STK_AIMConfig) refers to memseta.o(.text) for __aeabi_memclr4
+    board_stkhc32l021.o(.text.STK_AIMConfig) refers to gpio.o(.text.GPIO_StcInit) for GPIO_StcInit
+    board_stkhc32l021.o(.text.STK_AIMConfig) refers to sysctrl.o(.text.SYSCTRL_PeriphClockEnable) for SYSCTRL_PeriphClockEnable
+    board_stkhc32l021.o(.text.STK_AIMConfig) refers to gpio.o(.text.GPIO_Init) for GPIO_Init
+    board_stkhc32l021.o(.ARM.exidx.text.STK_AIMConfig) refers to board_stkhc32l021.o(.text.STK_AIMConfig) for [Anonymous Symbol]
+    board_stkhc32l021.o(.text.STK_LEDConfig) refers to memseta.o(.text) for __aeabi_memclr4
+    board_stkhc32l021.o(.text.STK_LEDConfig) refers to gpio.o(.text.GPIO_StcInit) for GPIO_StcInit
+    board_stkhc32l021.o(.text.STK_LEDConfig) refers to sysctrl.o(.text.SYSCTRL_PeriphClockEnable) for SYSCTRL_PeriphClockEnable
+    board_stkhc32l021.o(.text.STK_LEDConfig) refers to gpio.o(.text.GPIO_Init) for GPIO_Init
+    board_stkhc32l021.o(.ARM.exidx.text.STK_LEDConfig) refers to board_stkhc32l021.o(.text.STK_LEDConfig) for [Anonymous Symbol]
+    board_stkhc32l021.o(.ARM.exidx.text.STK_ChipInfoGet) refers to board_stkhc32l021.o(.text.STK_ChipInfoGet) for [Anonymous Symbol]
+    board_stkhc32l021.o(.text.Btim0Config) refers to memseta.o(.text) for __aeabi_memclr4
+    board_stkhc32l021.o(.text.Btim0Config) refers to sysctrl.o(.text.SYSCTRL_FuncEnable) for SYSCTRL_FuncEnable
+    board_stkhc32l021.o(.text.Btim0Config) refers to sysctrl.o(.text.SYSCTRL_PeriphClockEnable) for SYSCTRL_PeriphClockEnable
+    board_stkhc32l021.o(.text.Btim0Config) refers to btim.o(.text.BTIM_StcInit) for BTIM_StcInit
+    board_stkhc32l021.o(.text.Btim0Config) refers to dfltui.o(.text) for __aeabi_ui2d
+    board_stkhc32l021.o(.text.Btim0Config) refers to dmul.o(.text) for __aeabi_dmul
+    board_stkhc32l021.o(.text.Btim0Config) refers to dfixui.o(.text) for __aeabi_d2uiz
+    board_stkhc32l021.o(.text.Btim0Config) refers to btim.o(.text.BTIM_Init) for BTIM_Init
+    board_stkhc32l021.o(.text.Btim0Config) refers to btim.o(.text.BTIM_IntFlagClear) for BTIM_IntFlagClear
+    board_stkhc32l021.o(.text.Btim0Config) refers to btim.o(.text.BTIM_IntEnable) for BTIM_IntEnable
+    board_stkhc32l021.o(.text.Btim0Config) refers to interrupts_hc32l021.o(.text.EnableNvic) for EnableNvic
+    board_stkhc32l021.o(.ARM.exidx.text.Btim0Config) refers to board_stkhc32l021.o(.text.Btim0Config) for [Anonymous Symbol]
+    board_stkhc32l021.o(.text.Btim1Config) refers to memseta.o(.text) for __aeabi_memclr4
+    board_stkhc32l021.o(.text.Btim1Config) refers to sysctrl.o(.text.SYSCTRL_FuncEnable) for SYSCTRL_FuncEnable
+    board_stkhc32l021.o(.text.Btim1Config) refers to sysctrl.o(.text.SYSCTRL_PeriphClockEnable) for SYSCTRL_PeriphClockEnable
+    board_stkhc32l021.o(.text.Btim1Config) refers to btim.o(.text.BTIM_StcInit) for BTIM_StcInit
+    board_stkhc32l021.o(.text.Btim1Config) refers to dfltui.o(.text) for __aeabi_ui2d
+    board_stkhc32l021.o(.text.Btim1Config) refers to dmul.o(.text) for __aeabi_dmul
+    board_stkhc32l021.o(.text.Btim1Config) refers to dfixui.o(.text) for __aeabi_d2uiz
+    board_stkhc32l021.o(.text.Btim1Config) refers to btim.o(.text.BTIM_Init) for BTIM_Init
+    board_stkhc32l021.o(.text.Btim1Config) refers to btim.o(.text.BTIM_IntFlagClear) for BTIM_IntFlagClear
+    board_stkhc32l021.o(.text.Btim1Config) refers to btim.o(.text.BTIM_IntEnable) for BTIM_IntEnable
+    board_stkhc32l021.o(.text.Btim1Config) refers to interrupts_hc32l021.o(.text.EnableNvic) for EnableNvic
+    board_stkhc32l021.o(.ARM.exidx.text.Btim1Config) refers to board_stkhc32l021.o(.text.Btim1Config) for [Anonymous Symbol]
+    interrupts_hc32l021.o(.ARM.exidx.text.EnableNvic) refers to interrupts_hc32l021.o(.text.EnableNvic) for [Anonymous Symbol]
+    interrupts_hc32l021.o(.ARM.exidx.text.SysTick_IRQHandler) refers to interrupts_hc32l021.o(.text.SysTick_IRQHandler) for [Anonymous Symbol]
+    interrupts_hc32l021.o(.ARM.exidx.text.PortA_IRQHandler) refers to interrupts_hc32l021.o(.text.PortA_IRQHandler) for [Anonymous Symbol]
+    interrupts_hc32l021.o(.ARM.exidx.text.PortB_IRQHandler) refers to interrupts_hc32l021.o(.text.PortB_IRQHandler) for [Anonymous Symbol]
+    interrupts_hc32l021.o(.ARM.exidx.text.Atim3_IRQHandler) refers to interrupts_hc32l021.o(.text.Atim3_IRQHandler) for [Anonymous Symbol]
+    interrupts_hc32l021.o(.ARM.exidx.text.LpUart0_IRQHandler) refers to interrupts_hc32l021.o(.text.LpUart0_IRQHandler) for [Anonymous Symbol]
+    interrupts_hc32l021.o(.ARM.exidx.text.LpUart1_IRQHandler) refers to interrupts_hc32l021.o(.text.LpUart1_IRQHandler) for [Anonymous Symbol]
+    interrupts_hc32l021.o(.ARM.exidx.text.Spi_IRQHandler) refers to interrupts_hc32l021.o(.text.Spi_IRQHandler) for [Anonymous Symbol]
+    interrupts_hc32l021.o(.ARM.exidx.text.Ctim0_IRQHandler) refers to interrupts_hc32l021.o(.text.Ctim0_IRQHandler) for [Anonymous Symbol]
+    interrupts_hc32l021.o(.ARM.exidx.text.Ctim1_IRQHandler) refers to interrupts_hc32l021.o(.text.Ctim1_IRQHandler) for [Anonymous Symbol]
+    interrupts_hc32l021.o(.ARM.exidx.text.Hsi2c_IRQHandler) refers to interrupts_hc32l021.o(.text.Hsi2c_IRQHandler) for [Anonymous Symbol]
+    interrupts_hc32l021.o(.ARM.exidx.text.Iwdt_IRQHandler) refers to interrupts_hc32l021.o(.text.Iwdt_IRQHandler) for [Anonymous Symbol]
+    interrupts_hc32l021.o(.ARM.exidx.text.Rtc_IRQHandler) refers to interrupts_hc32l021.o(.text.Rtc_IRQHandler) for [Anonymous Symbol]
+    interrupts_hc32l021.o(.ARM.exidx.text.Adc_IRQHandler) refers to interrupts_hc32l021.o(.text.Adc_IRQHandler) for [Anonymous Symbol]
+    interrupts_hc32l021.o(.ARM.exidx.text.Vc0_IRQHandler) refers to interrupts_hc32l021.o(.text.Vc0_IRQHandler) for [Anonymous Symbol]
+    interrupts_hc32l021.o(.ARM.exidx.text.Vc1_IRQHandler) refers to interrupts_hc32l021.o(.text.Vc1_IRQHandler) for [Anonymous Symbol]
+    interrupts_hc32l021.o(.ARM.exidx.text.Lvd_IRQHandler) refers to interrupts_hc32l021.o(.text.Lvd_IRQHandler) for [Anonymous Symbol]
+    interrupts_hc32l021.o(.ARM.exidx.text.Flash_IRQHandler) refers to interrupts_hc32l021.o(.text.Flash_IRQHandler) for [Anonymous Symbol]
+    interrupts_hc32l021.o(.ARM.exidx.text.Ctrim_Clkdet_IRQHandler) refers to interrupts_hc32l021.o(.text.Ctrim_Clkdet_IRQHandler) for [Anonymous Symbol]
+    interrupts_hc32l021.o(.ARM.exidx.text.HardFault_Handler) refers to interrupts_hc32l021.o(.text.HardFault_Handler) for [Anonymous Symbol]
+    interrupts_hc32l021.o(.text.SysTick_Handler) refers to interrupts_hc32l021.o(.text.SysTick_IRQHandler) for SysTick_IRQHandler
+    interrupts_hc32l021.o(.ARM.exidx.text.SysTick_Handler) refers to interrupts_hc32l021.o(.text.SysTick_Handler) for [Anonymous Symbol]
+    interrupts_hc32l021.o(.text.PORTA_IRQHandler) refers to main.o(.text.PortA_IRQHandler) for PortA_IRQHandler
+    interrupts_hc32l021.o(.ARM.exidx.text.PORTA_IRQHandler) refers to interrupts_hc32l021.o(.text.PORTA_IRQHandler) for [Anonymous Symbol]
+    interrupts_hc32l021.o(.text.PORTB_IRQHandler) refers to interrupts_hc32l021.o(.text.PortB_IRQHandler) for PortB_IRQHandler
+    interrupts_hc32l021.o(.ARM.exidx.text.PORTB_IRQHandler) refers to interrupts_hc32l021.o(.text.PORTB_IRQHandler) for [Anonymous Symbol]
+    interrupts_hc32l021.o(.text.ATIM3_IRQHandler) refers to interrupts_hc32l021.o(.text.Atim3_IRQHandler) for Atim3_IRQHandler
+    interrupts_hc32l021.o(.ARM.exidx.text.ATIM3_IRQHandler) refers to interrupts_hc32l021.o(.text.ATIM3_IRQHandler) for [Anonymous Symbol]
+    interrupts_hc32l021.o(.text.LPUART0_IRQHandler) refers to interrupts_hc32l021.o(.text.LpUart0_IRQHandler) for LpUart0_IRQHandler
+    interrupts_hc32l021.o(.ARM.exidx.text.LPUART0_IRQHandler) refers to interrupts_hc32l021.o(.text.LPUART0_IRQHandler) for [Anonymous Symbol]
+    interrupts_hc32l021.o(.text.LPUART1_IRQHandler) refers to interrupts_hc32l021.o(.text.LpUart1_IRQHandler) for LpUart1_IRQHandler
+    interrupts_hc32l021.o(.ARM.exidx.text.LPUART1_IRQHandler) refers to interrupts_hc32l021.o(.text.LPUART1_IRQHandler) for [Anonymous Symbol]
+    interrupts_hc32l021.o(.text.SPI_IRQHandler) refers to interrupts_hc32l021.o(.text.Spi_IRQHandler) for Spi_IRQHandler
+    interrupts_hc32l021.o(.ARM.exidx.text.SPI_IRQHandler) refers to interrupts_hc32l021.o(.text.SPI_IRQHandler) for [Anonymous Symbol]
+    interrupts_hc32l021.o(.text.CTIM0_IRQHandler) refers to main.o(.text.Ctim0_IRQHandler) for Ctim0_IRQHandler
+    interrupts_hc32l021.o(.ARM.exidx.text.CTIM0_IRQHandler) refers to interrupts_hc32l021.o(.text.CTIM0_IRQHandler) for [Anonymous Symbol]
+    interrupts_hc32l021.o(.text.CTIM1_IRQHandler) refers to interrupts_hc32l021.o(.text.Ctim1_IRQHandler) for Ctim1_IRQHandler
+    interrupts_hc32l021.o(.ARM.exidx.text.CTIM1_IRQHandler) refers to interrupts_hc32l021.o(.text.CTIM1_IRQHandler) for [Anonymous Symbol]
+    interrupts_hc32l021.o(.text.HSI2C_IRQHandler) refers to i2c_iap_app.o(.text.Hsi2c_IRQHandler) for Hsi2c_IRQHandler
+    interrupts_hc32l021.o(.ARM.exidx.text.HSI2C_IRQHandler) refers to interrupts_hc32l021.o(.text.HSI2C_IRQHandler) for [Anonymous Symbol]
+    interrupts_hc32l021.o(.text.IWDT_IRQHandler) refers to interrupts_hc32l021.o(.text.Iwdt_IRQHandler) for Iwdt_IRQHandler
+    interrupts_hc32l021.o(.ARM.exidx.text.IWDT_IRQHandler) refers to interrupts_hc32l021.o(.text.IWDT_IRQHandler) for [Anonymous Symbol]
+    interrupts_hc32l021.o(.text.RTC_IRQHandler) refers to interrupts_hc32l021.o(.text.Rtc_IRQHandler) for Rtc_IRQHandler
+    interrupts_hc32l021.o(.ARM.exidx.text.RTC_IRQHandler) refers to interrupts_hc32l021.o(.text.RTC_IRQHandler) for [Anonymous Symbol]
+    interrupts_hc32l021.o(.text.ADC_IRQHandler) refers to interrupts_hc32l021.o(.text.Adc_IRQHandler) for Adc_IRQHandler
+    interrupts_hc32l021.o(.ARM.exidx.text.ADC_IRQHandler) refers to interrupts_hc32l021.o(.text.ADC_IRQHandler) for [Anonymous Symbol]
+    interrupts_hc32l021.o(.text.VC0_IRQHandler) refers to interrupts_hc32l021.o(.text.Vc0_IRQHandler) for Vc0_IRQHandler
+    interrupts_hc32l021.o(.ARM.exidx.text.VC0_IRQHandler) refers to interrupts_hc32l021.o(.text.VC0_IRQHandler) for [Anonymous Symbol]
+    interrupts_hc32l021.o(.text.VC1_IRQHandler) refers to interrupts_hc32l021.o(.text.Vc1_IRQHandler) for Vc1_IRQHandler
+    interrupts_hc32l021.o(.ARM.exidx.text.VC1_IRQHandler) refers to interrupts_hc32l021.o(.text.VC1_IRQHandler) for [Anonymous Symbol]
+    interrupts_hc32l021.o(.text.LVD_IRQHandler) refers to interrupts_hc32l021.o(.text.Lvd_IRQHandler) for Lvd_IRQHandler
+    interrupts_hc32l021.o(.ARM.exidx.text.LVD_IRQHandler) refers to interrupts_hc32l021.o(.text.LVD_IRQHandler) for [Anonymous Symbol]
+    interrupts_hc32l021.o(.text.FLASH_IRQHandler) refers to interrupts_hc32l021.o(.text.Flash_IRQHandler) for Flash_IRQHandler
+    interrupts_hc32l021.o(.ARM.exidx.text.FLASH_IRQHandler) refers to interrupts_hc32l021.o(.text.FLASH_IRQHandler) for [Anonymous Symbol]
+    interrupts_hc32l021.o(.text.CTRIM_CLKDET_IRQHandler) refers to interrupts_hc32l021.o(.text.Ctrim_Clkdet_IRQHandler) for Ctrim_Clkdet_IRQHandler
+    interrupts_hc32l021.o(.ARM.exidx.text.CTRIM_CLKDET_IRQHandler) refers to interrupts_hc32l021.o(.text.CTRIM_CLKDET_IRQHandler) for [Anonymous Symbol]
+    boot_param.o(.text.BootParam_CalcHeaderCrc) refers to boot_param.o(.text.HC32_CalCrc16) for HC32_CalCrc16
+    boot_param.o(.ARM.exidx.text.BootParam_CalcHeaderCrc) refers to boot_param.o(.text.BootParam_CalcHeaderCrc) for [Anonymous Symbol]
+    boot_param.o(.ARM.exidx.text.HC32_CalCrc16) refers to boot_param.o(.text.HC32_CalCrc16) for [Anonymous Symbol]
+    boot_param.o(.ARM.exidx.text.BootParam_Read) refers to boot_param.o(.text.BootParam_Read) for [Anonymous Symbol]
+    boot_param.o(.ARM.exidx.text.HC32_FlashReadBytes) refers to boot_param.o(.text.HC32_FlashReadBytes) for [Anonymous Symbol]
+    boot_param.o(.text.BootParam_WriteState) refers to boot_param.o(.text.BootParam_CalcHeaderCrc) for BootParam_CalcHeaderCrc
+    boot_param.o(.text.BootParam_WriteState) refers to boot_param.o(.text.HC32_FlashEraseSector) for HC32_FlashEraseSector
+    boot_param.o(.text.BootParam_WriteState) refers to boot_param.o(.text.HC32_FlashWriteBytes) for HC32_FlashWriteBytes
+    boot_param.o(.ARM.exidx.text.BootParam_WriteState) refers to boot_param.o(.text.BootParam_WriteState) for [Anonymous Symbol]
+    boot_param.o(.ARM.exidx.text.HC32_FlashEraseSector) refers to boot_param.o(.text.HC32_FlashEraseSector) for [Anonymous Symbol]
+    boot_param.o(.ARM.exidx.text.HC32_FlashWriteBytes) refers to boot_param.o(.text.HC32_FlashWriteBytes) for [Anonymous Symbol]
+    main.o(.text.main) refers to i2c_iap_app.o(.text.IAP_APP_Init) for IAP_APP_Init
+    main.o(.text.main) refers to boot_param.o(.text.BootParam_Read) for BootParam_Read
+    main.o(.text.main) refers to sysctrl.o(.text.SYSCTRL_PeriphClockEnable) for SYSCTRL_PeriphClockEnable
+    main.o(.text.main) refers to sysctrl.o(.text.SYSCTRL_PeriphReset) for SYSCTRL_PeriphReset
+    main.o(.text.main) refers to gpio.o(.text.GPIO_StcInit) for GPIO_StcInit
+    main.o(.text.main) refers to gpio.o(.text.GPIO_Init) for GPIO_Init
+    main.o(.text.main) refers to lpuart.o(.text.LPUART_StcInit) for LPUART_StcInit
+    main.o(.text.main) refers to memseta.o(.text) for __aeabi_memclr4
+    main.o(.text.main) refers to sysctrl.o(.text.SYSCTRL_HclkFreqGet) for SYSCTRL_HclkFreqGet
+    main.o(.text.main) refers to lpuart.o(.text.LPUART_Init) for LPUART_Init
+    main.o(.text.main) refers to lpuart.o(.text.LPUART_FuncEnable) for LPUART_FuncEnable
+    main.o(.text.main) refers to main.o(.text.APP_DebugLog) for APP_DebugLog
+    main.o(.text.main) refers to board_stkhc32l021.o(.text.STK_EvsyncConfig) for STK_EvsyncConfig
+    main.o(.text.main) refers to board_stkhc32l021.o(.text.STK_AIMConfig) for STK_AIMConfig
+    main.o(.text.main) refers to board_stkhc32l021.o(.text.STK_LEDConfig) for STK_LEDConfig
+    main.o(.text.main) refers to board_stkhc32l021.o(.text.Btim0Config) for Btim0Config
+    main.o(.text.main) refers to board_stkhc32l021.o(.text.Btim1Config) for Btim1Config
+    main.o(.text.main) refers to boot_param.o(.text.BootParam_WriteState) for BootParam_WriteState
+    main.o(.text.main) refers to i2c_iap_app.o(.text.IAP_APP_Task) for IAP_APP_Task
+    main.o(.text.main) refers to main.o(.rodata.str1.1) for .L.str.1
+    main.o(.ARM.exidx.text.main) refers to main.o(.text.main) for [Anonymous Symbol]
+    main.o(.ARM.exidx.text.APP_DebugLog) refers to main.o(.text.APP_DebugLog) for [Anonymous Symbol]
+    main.o(.text.Ctim0_IRQHandler) refers to btim.o(.text.BTIM_IntFlagGet) for BTIM_IntFlagGet
+    main.o(.text.Ctim0_IRQHandler) refers to btim.o(.text.BTIM_CounterSet) for BTIM_CounterSet
+    main.o(.text.Ctim0_IRQHandler) refers to btim.o(.text.BTIM_Enable) for BTIM_Enable
+    main.o(.text.Ctim0_IRQHandler) refers to btim.o(.text.BTIM_Disable) for BTIM_Disable
+    main.o(.text.Ctim0_IRQHandler) refers to btim.o(.text.BTIM_IntFlagClear) for BTIM_IntFlagClear
+    main.o(.ARM.exidx.text.Ctim0_IRQHandler) refers to main.o(.text.Ctim0_IRQHandler) for [Anonymous Symbol]
+    main.o(.text.PortA_IRQHandler) refers to gpio.o(.text.GPIO_IntFlagGet) for GPIO_IntFlagGet
+    main.o(.text.PortA_IRQHandler) refers to gpio.o(.text.GPIO_IntFlagClear) for GPIO_IntFlagClear
+    main.o(.text.PortA_IRQHandler) refers to btim.o(.text.BTIM_CounterSet) for BTIM_CounterSet
+    main.o(.text.PortA_IRQHandler) refers to btim.o(.text.BTIM_Enable) for BTIM_Enable
+    main.o(.ARM.exidx.text.PortA_IRQHandler) refers to main.o(.text.PortA_IRQHandler) for [Anonymous Symbol]
+    i2c_iap_app.o(.text.Hsi2c_IRQHandler) refers to hsi2c.o(.text.HSI2C_SlaveReadData) for HSI2C_SlaveReadData
+    i2c_iap_app.o(.text.Hsi2c_IRQHandler) refers to hsi2c.o(.text.HSI2C_SlaveWriteData) for HSI2C_SlaveWriteData
+    i2c_iap_app.o(.text.Hsi2c_IRQHandler) refers to i2c_iap_app.o(.bss..L_MergedGlobals) for [Anonymous Symbol]
+    i2c_iap_app.o(.text.Hsi2c_IRQHandler) refers to i2c_iap_app.o(.bss.s_au8RxMailbox) for [Anonymous Symbol]
+    i2c_iap_app.o(.text.Hsi2c_IRQHandler) refers to i2c_iap_app.o(.bss.s_au8TxMailbox) for [Anonymous Symbol]
+    i2c_iap_app.o(.ARM.exidx.text.Hsi2c_IRQHandler) refers to i2c_iap_app.o(.text.Hsi2c_IRQHandler) for [Anonymous Symbol]
+    i2c_iap_app.o(.text.IAP_APP_Init) refers to memseta.o(.text) for __aeabi_memclr4
+    i2c_iap_app.o(.text.IAP_APP_Init) refers to sysctrl.o(.text.SYSCTRL_PeriphClockEnable) for SYSCTRL_PeriphClockEnable
+    i2c_iap_app.o(.text.IAP_APP_Init) refers to gpio.o(.text.GPIO_StcInit) for GPIO_StcInit
+    i2c_iap_app.o(.text.IAP_APP_Init) refers to gpio.o(.text.GPIO_Init) for GPIO_Init
+    i2c_iap_app.o(.text.IAP_APP_Init) refers to hsi2c.o(.text.HSI2C_SlaveStcInit) for HSI2C_SlaveStcInit
+    i2c_iap_app.o(.text.IAP_APP_Init) refers to hsi2c.o(.text.HSI2C_SlaveInit) for HSI2C_SlaveInit
+    i2c_iap_app.o(.text.IAP_APP_Init) refers to hsi2c.o(.text.HSI2C_SlaveFlagClear) for HSI2C_SlaveFlagClear
+    i2c_iap_app.o(.text.IAP_APP_Init) refers to hsi2c.o(.text.HSI2C_SlaveIntEnable) for HSI2C_SlaveIntEnable
+    i2c_iap_app.o(.text.IAP_APP_Init) refers to interrupts_hc32l021.o(.text.EnableNvic) for EnableNvic
+    i2c_iap_app.o(.text.IAP_APP_Init) refers to i2c_iap_app.o(.bss..L_MergedGlobals) for [Anonymous Symbol]
+    i2c_iap_app.o(.text.IAP_APP_Init) refers to i2c_iap_app.o(.bss.s_au8RxMailbox) for [Anonymous Symbol]
+    i2c_iap_app.o(.text.IAP_APP_Init) refers to i2c_iap_app.o(.bss.s_au8TxMailbox) for [Anonymous Symbol]
+    i2c_iap_app.o(.ARM.exidx.text.IAP_APP_Init) refers to i2c_iap_app.o(.text.IAP_APP_Init) for [Anonymous Symbol]
+    i2c_iap_app.o(.text.IAP_APP_Task) refers to i2c_iap_app.o(.text.APP_BuildResponse) for APP_BuildResponse
+    i2c_iap_app.o(.text.IAP_APP_Task) refers to boot_param.o(.text.HC32_CalCrc16) for HC32_CalCrc16
+    i2c_iap_app.o(.text.IAP_APP_Task) refers to boot_param.o(.text.BootParam_WriteState) for BootParam_WriteState
+    i2c_iap_app.o(.text.IAP_APP_Task) refers to memcpya.o(.text) for __aeabi_memcpy
+    i2c_iap_app.o(.text.IAP_APP_Task) refers to i2c_iap_app.o(.bss..L_MergedGlobals) for [Anonymous Symbol]
+    i2c_iap_app.o(.text.IAP_APP_Task) refers to i2c_iap_app.o(.bss.s_au8RxMailbox) for [Anonymous Symbol]
+    i2c_iap_app.o(.ARM.exidx.text.IAP_APP_Task) refers to i2c_iap_app.o(.text.IAP_APP_Task) for [Anonymous Symbol]
+    i2c_iap_app.o(.text.APP_BuildResponse) refers to memcpya.o(.text) for __aeabi_memcpy
+    i2c_iap_app.o(.text.APP_BuildResponse) refers to boot_param.o(.text.HC32_CalCrc16) for HC32_CalCrc16
+    i2c_iap_app.o(.text.APP_BuildResponse) refers to i2c_iap_app.o(.bss.s_au8TxMailbox) for [Anonymous Symbol]
+    i2c_iap_app.o(.text.APP_BuildResponse) refers to i2c_iap_app.o(.bss..L_MergedGlobals) for [Anonymous Symbol]
+    i2c_iap_app.o(.ARM.exidx.text.APP_BuildResponse) refers to i2c_iap_app.o(.text.APP_BuildResponse) for [Anonymous Symbol]
+    sysctrl.o(.text.SYSCTRL_ClockInit) refers to sysctrl.o(.text.SYSCTRL_ClockSrcEnable) for SYSCTRL_ClockSrcEnable
+    sysctrl.o(.text.SYSCTRL_ClockInit) refers to sysctrl.o(.text.SYSCTRL_SysClockSwitch) for SYSCTRL_SysClockSwitch
+    sysctrl.o(.text.SYSCTRL_ClockInit) refers to system_hc32l021.o(.text.SystemCoreClockUpdate) for SystemCoreClockUpdate
+    sysctrl.o(.text.SYSCTRL_ClockInit) refers to system_hc32l021.o(.data.SystemCoreClock) for SystemCoreClock
+    sysctrl.o(.ARM.exidx.text.SYSCTRL_ClockInit) refers to sysctrl.o(.text.SYSCTRL_ClockInit) for [Anonymous Symbol]
+    sysctrl.o(.ARM.exidx.text.SYSCTRL_ClockSrcEnable) refers to sysctrl.o(.text.SYSCTRL_ClockSrcEnable) for [Anonymous Symbol]
+    sysctrl.o(.ARM.exidx.text.SYSCTRL_SysClockSwitch) refers to sysctrl.o(.text.SYSCTRL_SysClockSwitch) for [Anonymous Symbol]
+    sysctrl.o(.ARM.exidx.text.SYSCTRL_HclkDivSet) refers to sysctrl.o(.text.SYSCTRL_HclkDivSet) for [Anonymous Symbol]
+    sysctrl.o(.ARM.exidx.text.SYSCTRL_ClockSrcDisable) refers to sysctrl.o(.text.SYSCTRL_ClockSrcDisable) for [Anonymous Symbol]
+    sysctrl.o(.ARM.exidx.text.SYSCTRL_HclkFreqGet) refers to sysctrl.o(.text.SYSCTRL_HclkFreqGet) for [Anonymous Symbol]
+    sysctrl.o(.ARM.exidx.text.SYSCTRL_RC48MTrimSet) refers to sysctrl.o(.text.SYSCTRL_RC48MTrimSet) for [Anonymous Symbol]
+    sysctrl.o(.ARM.exidx.text.SYSCTRL_RCLTrimSet) refers to sysctrl.o(.text.SYSCTRL_RCLTrimSet) for [Anonymous Symbol]
+    sysctrl.o(.ARM.exidx.text.SYSCTRL_XTLStableTimeSet) refers to sysctrl.o(.text.SYSCTRL_XTLStableTimeSet) for [Anonymous Symbol]
+    sysctrl.o(.ARM.exidx.text.SYSCTRL_XTLDrvConfig) refers to sysctrl.o(.text.SYSCTRL_XTLDrvConfig) for [Anonymous Symbol]
+    sysctrl.o(.ARM.exidx.text.SYSCTRL_XTLFailureConfig) refers to sysctrl.o(.text.SYSCTRL_XTLFailureConfig) for [Anonymous Symbol]
+    sysctrl.o(.ARM.exidx.text.SYSCTRL_XTLFailureIntEnable) refers to sysctrl.o(.text.SYSCTRL_XTLFailureIntEnable) for [Anonymous Symbol]
+    sysctrl.o(.ARM.exidx.text.SYSCTRL_XTLFailureIntDisable) refers to sysctrl.o(.text.SYSCTRL_XTLFailureIntDisable) for [Anonymous Symbol]
+    sysctrl.o(.ARM.exidx.text.SYSCTRL_XTLFailureIntFlagGet) refers to sysctrl.o(.text.SYSCTRL_XTLFailureIntFlagGet) for [Anonymous Symbol]
+    sysctrl.o(.ARM.exidx.text.SYSCTRL_XTLFailureIntFlagClear) refers to sysctrl.o(.text.SYSCTRL_XTLFailureIntFlagClear) for [Anonymous Symbol]
+    sysctrl.o(.ARM.exidx.text.SYSCTRL_XTLAlwaysOnEnable) refers to sysctrl.o(.text.SYSCTRL_XTLAlwaysOnEnable) for [Anonymous Symbol]
+    sysctrl.o(.ARM.exidx.text.SYSCTRL_XTLAlwaysOnDisable) refers to sysctrl.o(.text.SYSCTRL_XTLAlwaysOnDisable) for [Anonymous Symbol]
+    sysctrl.o(.ARM.exidx.text.SYSCTRL_PeriphClockEnable) refers to sysctrl.o(.text.SYSCTRL_PeriphClockEnable) for [Anonymous Symbol]
+    sysctrl.o(.ARM.exidx.text.SYSCTRL_PeriphClockDisable) refers to sysctrl.o(.text.SYSCTRL_PeriphClockDisable) for [Anonymous Symbol]
+    sysctrl.o(.ARM.exidx.text.SYSCTRL_PeriphClockStatusGet) refers to sysctrl.o(.text.SYSCTRL_PeriphClockStatusGet) for [Anonymous Symbol]
+    sysctrl.o(.ARM.exidx.text.SYSCTRL_FuncEnable) refers to sysctrl.o(.text.SYSCTRL_FuncEnable) for [Anonymous Symbol]
+    sysctrl.o(.ARM.exidx.text.SYSCTRL_FuncDisable) refers to sysctrl.o(.text.SYSCTRL_FuncDisable) for [Anonymous Symbol]
+    sysctrl.o(.ARM.exidx.text.SYSCTRL_WakeupByRC48M) refers to sysctrl.o(.text.SYSCTRL_WakeupByRC48M) for [Anonymous Symbol]
+    sysctrl.o(.text.SYSCTRL_ClockDeInit) refers to sysctrl.o(.text.SYSCTRL_ClockSrcEnable) for SYSCTRL_ClockSrcEnable
+    sysctrl.o(.text.SYSCTRL_ClockDeInit) refers to system_hc32l021.o(.text.SystemCoreClockUpdate) for SystemCoreClockUpdate
+    sysctrl.o(.ARM.exidx.text.SYSCTRL_ClockDeInit) refers to sysctrl.o(.text.SYSCTRL_ClockDeInit) for [Anonymous Symbol]
+    sysctrl.o(.ARM.exidx.text.SYSCTRL_PeriphReset) refers to sysctrl.o(.text.SYSCTRL_PeriphReset) for [Anonymous Symbol]
+    sysctrl.o(.ARM.exidx.text.SYSCTRL_ResetFlagGet) refers to sysctrl.o(.text.SYSCTRL_ResetFlagGet) for [Anonymous Symbol]
+    sysctrl.o(.ARM.exidx.text.SYSCTRL_ResetFlagClear) refers to sysctrl.o(.text.SYSCTRL_ResetFlagClear) for [Anonymous Symbol]
+    sysctrl.o(.ARM.exidx.text.SYSCTRL_ResetFlagClearAll) refers to sysctrl.o(.text.SYSCTRL_ResetFlagClearAll) for [Anonymous Symbol]
+    sysctrl.o(.ARM.exidx.text.SYSCTRL_DebugActiveEnable) refers to sysctrl.o(.text.SYSCTRL_DebugActiveEnable) for [Anonymous Symbol]
+    sysctrl.o(.ARM.exidx.text.SYSCTRL_DebugActiveDisable) refers to sysctrl.o(.text.SYSCTRL_DebugActiveDisable) for [Anonymous Symbol]
+    sysctrl.o(.ARM.exidx.text.SYSCTRL_ClockStcInit) refers to sysctrl.o(.text.SYSCTRL_ClockStcInit) for [Anonymous Symbol]
+    gpio.o(.ARM.exidx.text.GPIO_Init) refers to gpio.o(.text.GPIO_Init) for [Anonymous Symbol]
+    gpio.o(.ARM.exidx.text.GPIO_IntFlagGet) refers to gpio.o(.text.GPIO_IntFlagGet) for [Anonymous Symbol]
+    gpio.o(.ARM.exidx.text.GPIO_IntFlagClear) refers to gpio.o(.text.GPIO_IntFlagClear) for [Anonymous Symbol]
+    gpio.o(.ARM.exidx.text.GPIO_StcInit) refers to gpio.o(.text.GPIO_StcInit) for [Anonymous Symbol]
+    btim.o(.ARM.exidx.text.BTIM_Init) refers to btim.o(.text.BTIM_Init) for [Anonymous Symbol]
+    btim.o(.ARM.exidx.text.BTIM_CounterSet) refers to btim.o(.text.BTIM_CounterSet) for [Anonymous Symbol]
+    btim.o(.ARM.exidx.text.BTIM_CounterGet) refers to btim.o(.text.BTIM_CounterGet) for [Anonymous Symbol]
+    btim.o(.ARM.exidx.text.BTIM_AutoReloadSet) refers to btim.o(.text.BTIM_AutoReloadSet) for [Anonymous Symbol]
+    btim.o(.ARM.exidx.text.BTIM_Enable) refers to btim.o(.text.BTIM_Enable) for [Anonymous Symbol]
+    btim.o(.ARM.exidx.text.BTIM_Disable) refers to btim.o(.text.BTIM_Disable) for [Anonymous Symbol]
+    btim.o(.ARM.exidx.text.BTIM_ModeSet) refers to btim.o(.text.BTIM_ModeSet) for [Anonymous Symbol]
+    btim.o(.ARM.exidx.text.BTIM_ToggleEnable) refers to btim.o(.text.BTIM_ToggleEnable) for [Anonymous Symbol]
+    btim.o(.ARM.exidx.text.BTIM_ToggleDisable) refers to btim.o(.text.BTIM_ToggleDisable) for [Anonymous Symbol]
+    btim.o(.ARM.exidx.text.BTIM_CounterClockDivSet) refers to btim.o(.text.BTIM_CounterClockDivSet) for [Anonymous Symbol]
+    btim.o(.ARM.exidx.text.BTIM_OneShotSet) refers to btim.o(.text.BTIM_OneShotSet) for [Anonymous Symbol]
+    btim.o(.ARM.exidx.text.BTIM_TriggerSrcSet) refers to btim.o(.text.BTIM_TriggerSrcSet) for [Anonymous Symbol]
+    btim.o(.ARM.exidx.text.BTIM_ExternInputPolaritySet) refers to btim.o(.text.BTIM_ExternInputPolaritySet) for [Anonymous Symbol]
+    btim.o(.ARM.exidx.text.BTIM_IntEnable) refers to btim.o(.text.BTIM_IntEnable) for [Anonymous Symbol]
+    btim.o(.ARM.exidx.text.BTIM_IntDisable) refers to btim.o(.text.BTIM_IntDisable) for [Anonymous Symbol]
+    btim.o(.ARM.exidx.text.BTIM_IntFlagGet) refers to btim.o(.text.BTIM_IntFlagGet) for [Anonymous Symbol]
+    btim.o(.ARM.exidx.text.BTIM_IntFlagClear) refers to btim.o(.text.BTIM_IntFlagClear) for [Anonymous Symbol]
+    btim.o(.ARM.exidx.text.BTIM_AifrFlagGet) refers to btim.o(.text.BTIM_AifrFlagGet) for [Anonymous Symbol]
+    btim.o(.ARM.exidx.text.BTIM_AicrFlagClear) refers to btim.o(.text.BTIM_AicrFlagClear) for [Anonymous Symbol]
+    btim.o(.text.BTIM_StcInit) refers to memseta.o(.text) for __aeabi_memclr4
+    btim.o(.ARM.exidx.text.BTIM_StcInit) refers to btim.o(.text.BTIM_StcInit) for [Anonymous Symbol]
+    ddl.o(.ARM.exidx.text.Log2) refers to ddl.o(.text.Log2) for [Anonymous Symbol]
+    ddl.o(.ARM.exidx.text.DDL_MemoryClear) refers to ddl.o(.text.DDL_MemoryClear) for [Anonymous Symbol]
+    ddl.o(.text.DDL_Delay1ms) refers to uidiv.o(.text) for __aeabi_uidiv
+    ddl.o(.text.DDL_Delay1ms) refers to system_hc32l021.o(.data.SystemCoreClock) for SystemCoreClock
+    ddl.o(.ARM.exidx.text.DDL_Delay1ms) refers to ddl.o(.text.DDL_Delay1ms) for [Anonymous Symbol]
+    ddl.o(.text.DDL_Delay100us) refers to uidiv.o(.text) for __aeabi_uidiv
+    ddl.o(.text.DDL_Delay100us) refers to system_hc32l021.o(.data.SystemCoreClock) for SystemCoreClock
+    ddl.o(.ARM.exidx.text.DDL_Delay100us) refers to ddl.o(.text.DDL_Delay100us) for [Anonymous Symbol]
+    ddl.o(.text.DDL_Delay10us) refers to uidiv.o(.text) for __aeabi_uidiv
+    ddl.o(.text.DDL_Delay10us) refers to system_hc32l021.o(.data.SystemCoreClock) for SystemCoreClock
+    ddl.o(.ARM.exidx.text.DDL_Delay10us) refers to ddl.o(.text.DDL_Delay10us) for [Anonymous Symbol]
+    hsi2c.o(.text.HSI2C_MasterInit) refers to hsi2c.o(.text.HSI2C_MasterMcfgr1Config) for HSI2C_MasterMcfgr1Config
+    hsi2c.o(.text.HSI2C_MasterInit) refers to hsi2c.o(.text.HSI2C_MasterMcfgr2Config) for HSI2C_MasterMcfgr2Config
+    hsi2c.o(.text.HSI2C_MasterInit) refers to hsi2c.o(.text.HSI2C_MasterBaudRateSet) for HSI2C_MasterBaudRateSet
+    hsi2c.o(.ARM.exidx.text.HSI2C_MasterInit) refers to hsi2c.o(.text.HSI2C_MasterInit) for [Anonymous Symbol]
+    hsi2c.o(.ARM.exidx.text.HSI2C_MasterReset) refers to hsi2c.o(.text.HSI2C_MasterReset) for [Anonymous Symbol]
+    hsi2c.o(.ARM.exidx.text.HSI2C_MasterMcfgr1Config) refers to hsi2c.o(.text.HSI2C_MasterMcfgr1Config) for [Anonymous Symbol]
+    hsi2c.o(.ARM.exidx.text.HSI2C_MasterMcfgr2Config) refers to hsi2c.o(.text.HSI2C_MasterMcfgr2Config) for [Anonymous Symbol]
+    hsi2c.o(.ARM.exidx.text.HSI2C_MasterMcfgr3Config) refers to hsi2c.o(.text.HSI2C_MasterMcfgr3Config) for [Anonymous Symbol]
+    hsi2c.o(.text.HSI2C_MasterBaudRateSet) refers to uidiv.o(.text) for __aeabi_uidiv
+    hsi2c.o(.ARM.exidx.text.HSI2C_MasterBaudRateSet) refers to hsi2c.o(.text.HSI2C_MasterBaudRateSet) for [Anonymous Symbol]
+    hsi2c.o(.ARM.exidx.text.HSI2C_SlaveDisable) refers to hsi2c.o(.text.HSI2C_SlaveDisable) for [Anonymous Symbol]
+    hsi2c.o(.ARM.exidx.text.HSI2C_MasterEnable) refers to hsi2c.o(.text.HSI2C_MasterEnable) for [Anonymous Symbol]
+    hsi2c.o(.text.HSI2C_MasterTransferInt) refers to ddl.o(.text.DDL_MemoryClear) for DDL_MemoryClear
+    hsi2c.o(.text.HSI2C_MasterTransferInt) refers to hsi2c.o(.bss..L_MergedGlobals) for [Anonymous Symbol]
+    hsi2c.o(.ARM.exidx.text.HSI2C_MasterTransferInt) refers to hsi2c.o(.text.HSI2C_MasterTransferInt) for [Anonymous Symbol]
+    hsi2c.o(.ARM.exidx.text.HSI2C_MasterFlagGet) refers to hsi2c.o(.text.HSI2C_MasterFlagGet) for [Anonymous Symbol]
+    hsi2c.o(.ARM.exidx.text.HSI2C_MasterIntDisable) refers to hsi2c.o(.text.HSI2C_MasterIntDisable) for [Anonymous Symbol]
+    hsi2c.o(.ARM.exidx.text.HSI2C_MasterFlagClear) refers to hsi2c.o(.text.HSI2C_MasterFlagClear) for [Anonymous Symbol]
+    hsi2c.o(.ARM.exidx.text.HSI2C_MasterIntEnable) refers to hsi2c.o(.text.HSI2C_MasterIntEnable) for [Anonymous Symbol]
+    hsi2c.o(.text.HSI2C_MasterStatusMachineStart) refers to hsi2c.o(.bss..L_MergedGlobals.1) for [Anonymous Symbol]
+    hsi2c.o(.text.HSI2C_MasterStatusMachineStart) refers to hsi2c.o(.bss..L_MergedGlobals) for [Anonymous Symbol]
+    hsi2c.o(.ARM.exidx.text.HSI2C_MasterStatusMachineStart) refers to hsi2c.o(.text.HSI2C_MasterStatusMachineStart) for [Anonymous Symbol]
+    hsi2c.o(.ARM.exidx.text.HSI2C_MasterStart) refers to hsi2c.o(.text.HSI2C_MasterStart) for [Anonymous Symbol]
+    hsi2c.o(.text.HSI2C_MasterStatusMachineSubAddr) refers to hsi2c.o(.bss..L_MergedGlobals.1) for [Anonymous Symbol]
+    hsi2c.o(.text.HSI2C_MasterStatusMachineSubAddr) refers to hsi2c.o(.bss..L_MergedGlobals) for [Anonymous Symbol]
+    hsi2c.o(.ARM.exidx.text.HSI2C_MasterStatusMachineSubAddr) refers to hsi2c.o(.text.HSI2C_MasterStatusMachineSubAddr) for [Anonymous Symbol]
+    hsi2c.o(.text.HSI2C_MasterStatusMachineRestart) refers to hsi2c.o(.bss..L_MergedGlobals.1) for [Anonymous Symbol]
+    hsi2c.o(.text.HSI2C_MasterStatusMachineRestart) refers to hsi2c.o(.bss..L_MergedGlobals) for [Anonymous Symbol]
+    hsi2c.o(.ARM.exidx.text.HSI2C_MasterStatusMachineRestart) refers to hsi2c.o(.text.HSI2C_MasterStatusMachineRestart) for [Anonymous Symbol]
+    hsi2c.o(.text.HSI2C_MasterStatusMachineRxCmd) refers to hsi2c.o(.bss..L_MergedGlobals.1) for [Anonymous Symbol]
+    hsi2c.o(.text.HSI2C_MasterStatusMachineRxCmd) refers to hsi2c.o(.bss..L_MergedGlobals) for [Anonymous Symbol]
+    hsi2c.o(.ARM.exidx.text.HSI2C_MasterStatusMachineRxCmd) refers to hsi2c.o(.text.HSI2C_MasterStatusMachineRxCmd) for [Anonymous Symbol]
+    hsi2c.o(.text.HSI2C_MasterStatusMachineTrans) refers to hsi2c.o(.bss..L_MergedGlobals) for [Anonymous Symbol]
+    hsi2c.o(.text.HSI2C_MasterStatusMachineTrans) refers to hsi2c.o(.bss..L_MergedGlobals.1) for [Anonymous Symbol]
+    hsi2c.o(.ARM.exidx.text.HSI2C_MasterStatusMachineTrans) refers to hsi2c.o(.text.HSI2C_MasterStatusMachineTrans) for [Anonymous Symbol]
+    hsi2c.o(.ARM.exidx.text.HSI2C_MasterStop) refers to hsi2c.o(.text.HSI2C_MasterStop) for [Anonymous Symbol]
+    hsi2c.o(.text.HSI2C_MasterStatusMachineStop) refers to hsi2c.o(.bss..L_MergedGlobals.1) for [Anonymous Symbol]
+    hsi2c.o(.text.HSI2C_MasterStatusMachineStop) refers to hsi2c.o(.bss..L_MergedGlobals) for [Anonymous Symbol]
+    hsi2c.o(.ARM.exidx.text.HSI2C_MasterStatusMachineStop) refers to hsi2c.o(.text.HSI2C_MasterStatusMachineStop) for [Anonymous Symbol]
+    hsi2c.o(.text.HSI2C_MasterTransferPoll) refers to ddl.o(.text.DDL_MemoryClear) for DDL_MemoryClear
+    hsi2c.o(.text.HSI2C_MasterTransferPoll) refers to hsi2c.o(.text.HSI2C_MasterErrorGet) for HSI2C_MasterErrorGet
+    hsi2c.o(.text.HSI2C_MasterTransferPoll) refers to hsi2c.o(.text.HSI2C_MasterStatusMachineStart) for HSI2C_MasterStatusMachineStart
+    hsi2c.o(.text.HSI2C_MasterTransferPoll) refers to hsi2c.o(.text.HSI2C_MasterStatusMachineTrans) for HSI2C_MasterStatusMachineTrans
+    hsi2c.o(.text.HSI2C_MasterTransferPoll) refers to hsi2c.o(.text.HSI2C_MasterStatusMachineSubAddr) for HSI2C_MasterStatusMachineSubAddr
+    hsi2c.o(.text.HSI2C_MasterTransferPoll) refers to hsi2c.o(.text.HSI2C_MasterStatusMachineRxCmd) for HSI2C_MasterStatusMachineRxCmd
+    hsi2c.o(.text.HSI2C_MasterTransferPoll) refers to hsi2c.o(.text.HSI2C_MasterStatusMachineRestart) for HSI2C_MasterStatusMachineRestart
+    hsi2c.o(.text.HSI2C_MasterTransferPoll) refers to hsi2c.o(.bss..L_MergedGlobals) for [Anonymous Symbol]
+    hsi2c.o(.text.HSI2C_MasterTransferPoll) refers to hsi2c.o(.bss..L_MergedGlobals.1) for [Anonymous Symbol]
+    hsi2c.o(.ARM.exidx.text.HSI2C_MasterTransferPoll) refers to hsi2c.o(.text.HSI2C_MasterTransferPoll) for [Anonymous Symbol]
+    hsi2c.o(.ARM.exidx.text.HSI2C_MasterErrorGet) refers to hsi2c.o(.text.HSI2C_MasterErrorGet) for [Anonymous Symbol]
+    hsi2c.o(.ARM.exidx.text.HSI2C_MasterWriteData) refers to hsi2c.o(.text.HSI2C_MasterWriteData) for [Anonymous Symbol]
+    hsi2c.o(.ARM.exidx.text.HSI2C_MasterReadData) refers to hsi2c.o(.text.HSI2C_MasterReadData) for [Anonymous Symbol]
+    hsi2c.o(.text.HSI2C_SlaveInit) refers to hsi2c.o(.text.HSI2C_SlaveScr2Config) for HSI2C_SlaveScr2Config
+    hsi2c.o(.ARM.exidx.text.HSI2C_SlaveInit) refers to hsi2c.o(.text.HSI2C_SlaveInit) for [Anonymous Symbol]
+    hsi2c.o(.ARM.exidx.text.HSI2C_SlaveReset) refers to hsi2c.o(.text.HSI2C_SlaveReset) for [Anonymous Symbol]
+    hsi2c.o(.ARM.exidx.text.HSI2C_SlaveScr1Config) refers to hsi2c.o(.text.HSI2C_SlaveScr1Config) for [Anonymous Symbol]
+    hsi2c.o(.ARM.exidx.text.HSI2C_SlaveScr2Config) refers to hsi2c.o(.text.HSI2C_SlaveScr2Config) for [Anonymous Symbol]
+    hsi2c.o(.ARM.exidx.text.HSI2C_MasterDisable) refers to hsi2c.o(.text.HSI2C_MasterDisable) for [Anonymous Symbol]
+    hsi2c.o(.ARM.exidx.text.HSI2C_SlaveEnable) refers to hsi2c.o(.text.HSI2C_SlaveEnable) for [Anonymous Symbol]
+    hsi2c.o(.text.HSI2C_SlaveTransferInt) refers to ddl.o(.text.DDL_MemoryClear) for DDL_MemoryClear
+    hsi2c.o(.text.HSI2C_SlaveTransferInt) refers to hsi2c.o(.bss..L_MergedGlobals) for [Anonymous Symbol]
+    hsi2c.o(.ARM.exidx.text.HSI2C_SlaveTransferInt) refers to hsi2c.o(.text.HSI2C_SlaveTransferInt) for [Anonymous Symbol]
+    hsi2c.o(.ARM.exidx.text.HSI2C_SlaveFlagGet) refers to hsi2c.o(.text.HSI2C_SlaveFlagGet) for [Anonymous Symbol]
+    hsi2c.o(.ARM.exidx.text.HSI2C_SlaveIntDisable) refers to hsi2c.o(.text.HSI2C_SlaveIntDisable) for [Anonymous Symbol]
+    hsi2c.o(.ARM.exidx.text.HSI2C_SlaveFlagClear) refers to hsi2c.o(.text.HSI2C_SlaveFlagClear) for [Anonymous Symbol]
+    hsi2c.o(.ARM.exidx.text.HSI2C_SlaveIntEnable) refers to hsi2c.o(.text.HSI2C_SlaveIntEnable) for [Anonymous Symbol]
+    hsi2c.o(.text.HSI2C_SlaveTransferPoll) refers to ddl.o(.text.DDL_MemoryClear) for DDL_MemoryClear
+    hsi2c.o(.text.HSI2C_SlaveTransferPoll) refers to hsi2c.o(.text.HSI2C_SlaveErrorGet) for HSI2C_SlaveErrorGet
+    hsi2c.o(.text.HSI2C_SlaveTransferPoll) refers to hsi2c.o(.text.HSI2C_SlaveTransAbort) for HSI2C_SlaveTransAbort
+    hsi2c.o(.text.HSI2C_SlaveTransferPoll) refers to hsi2c.o(.bss..L_MergedGlobals) for [Anonymous Symbol]
+    hsi2c.o(.ARM.exidx.text.HSI2C_SlaveTransferPoll) refers to hsi2c.o(.text.HSI2C_SlaveTransferPoll) for [Anonymous Symbol]
+    hsi2c.o(.ARM.exidx.text.HSI2C_SlaveErrorGet) refers to hsi2c.o(.text.HSI2C_SlaveErrorGet) for [Anonymous Symbol]
+    hsi2c.o(.ARM.exidx.text.HSI2C_SlaveWriteData) refers to hsi2c.o(.text.HSI2C_SlaveWriteData) for [Anonymous Symbol]
+    hsi2c.o(.text.HSI2C_SlaveTransAbort) refers to hsi2c.o(.bss..L_MergedGlobals) for [Anonymous Symbol]
+    hsi2c.o(.ARM.exidx.text.HSI2C_SlaveTransAbort) refers to hsi2c.o(.text.HSI2C_SlaveTransAbort) for [Anonymous Symbol]
+    hsi2c.o(.ARM.exidx.text.HSI2C_MasterDataMatchConfig) refers to hsi2c.o(.text.HSI2C_MasterDataMatchConfig) for [Anonymous Symbol]
+    hsi2c.o(.ARM.exidx.text.HSI2C_MasterIntGet) refers to hsi2c.o(.text.HSI2C_MasterIntGet) for [Anonymous Symbol]
+    hsi2c.o(.ARM.exidx.text.HSI2C_SlaveIntGet) refers to hsi2c.o(.text.HSI2C_SlaveIntGet) for [Anonymous Symbol]
+    hsi2c.o(.ARM.exidx.text.HSI2C_MasterReceiveCmd) refers to hsi2c.o(.text.HSI2C_MasterReceiveCmd) for [Anonymous Symbol]
+    hsi2c.o(.ARM.exidx.text.HSI2C_SlaveReadData) refers to hsi2c.o(.text.HSI2C_SlaveReadData) for [Anonymous Symbol]
+    hsi2c.o(.ARM.exidx.text.HSI2C_SlaveWriteAddr) refers to hsi2c.o(.text.HSI2C_SlaveWriteAddr) for [Anonymous Symbol]
+    hsi2c.o(.ARM.exidx.text.HSI2C_SlaveReadAddr) refers to hsi2c.o(.text.HSI2C_SlaveReadAddr) for [Anonymous Symbol]
+    hsi2c.o(.text.HSI2C_MasterTransAbort) refers to hsi2c.o(.bss..L_MergedGlobals) for [Anonymous Symbol]
+    hsi2c.o(.ARM.exidx.text.HSI2C_MasterTransAbort) refers to hsi2c.o(.text.HSI2C_MasterTransAbort) for [Anonymous Symbol]
+    hsi2c.o(.ARM.exidx.text.HSI2C_SlaveTransNack) refers to hsi2c.o(.text.HSI2C_SlaveTransNack) for [Anonymous Symbol]
+    hsi2c.o(.ARM.exidx.text.HSI2C_10BitAddrMdHighBitsGet) refers to hsi2c.o(.text.HSI2C_10BitAddrMdHighBitsGet) for [Anonymous Symbol]
+    hsi2c.o(.ARM.exidx.text.HSI2C_10BitAddrMdLowBitsGet) refers to hsi2c.o(.text.HSI2C_10BitAddrMdLowBitsGet) for [Anonymous Symbol]
+    hsi2c.o(.text.HSI2C_MasterStcInit) refers to ddl.o(.text.DDL_MemoryClear) for DDL_MemoryClear
+    hsi2c.o(.ARM.exidx.text.HSI2C_MasterStcInit) refers to hsi2c.o(.text.HSI2C_MasterStcInit) for [Anonymous Symbol]
+    hsi2c.o(.text.HSI2C_SlaveStcInit) refers to ddl.o(.text.DDL_MemoryClear) for DDL_MemoryClear
+    hsi2c.o(.ARM.exidx.text.HSI2C_SlaveStcInit) refers to hsi2c.o(.text.HSI2C_SlaveStcInit) for [Anonymous Symbol]
+    lpuart.o(.text.LPUART_Init) refers to ffltui.o(.text) for __aeabi_ui2f
+    lpuart.o(.text.LPUART_Init) refers to fdiv.o(.text) for __aeabi_fdiv
+    lpuart.o(.text.LPUART_Init) refers to fadd.o(.text) for __aeabi_fadd
+    lpuart.o(.text.LPUART_Init) refers to ffixui.o(.text) for __aeabi_f2uiz
+    lpuart.o(.text.LPUART_Init) refers to uidiv.o(.text) for __aeabi_uidiv
+    lpuart.o(.text.LPUART_Init) refers to ddl.o(.text.DDL_Delay1ms) for DDL_Delay1ms
+    lpuart.o(.ARM.exidx.text.LPUART_Init) refers to lpuart.o(.text.LPUART_Init) for [Anonymous Symbol]
+    lpuart.o(.ARM.exidx.text.LPUART_XtlBselSet) refers to lpuart.o(.text.LPUART_XtlBselSet) for [Anonymous Symbol]
+    lpuart.o(.ARM.exidx.text.LPUART_MultiModeConfig) refers to lpuart.o(.text.LPUART_MultiModeConfig) for [Anonymous Symbol]
+    lpuart.o(.ARM.exidx.text.LPUART_HdModeEnable) refers to lpuart.o(.text.LPUART_HdModeEnable) for [Anonymous Symbol]
+    lpuart.o(.ARM.exidx.text.LPUART_HdModeDisable) refers to lpuart.o(.text.LPUART_HdModeDisable) for [Anonymous Symbol]
+    lpuart.o(.ARM.exidx.text.LPUART_FuncEnable) refers to lpuart.o(.text.LPUART_FuncEnable) for [Anonymous Symbol]
+    lpuart.o(.ARM.exidx.text.LPUART_FuncDisable) refers to lpuart.o(.text.LPUART_FuncDisable) for [Anonymous Symbol]
+    lpuart.o(.ARM.exidx.text.LPUART_IntEnable) refers to lpuart.o(.text.LPUART_IntEnable) for [Anonymous Symbol]
+    lpuart.o(.ARM.exidx.text.LPUART_IntDisable) refers to lpuart.o(.text.LPUART_IntDisable) for [Anonymous Symbol]
+    lpuart.o(.ARM.exidx.text.LPUART_IntEnableGet) refers to lpuart.o(.text.LPUART_IntEnableGet) for [Anonymous Symbol]
+    lpuart.o(.ARM.exidx.text.LPUART_IntFlagGetAll) refers to lpuart.o(.text.LPUART_IntFlagGetAll) for [Anonymous Symbol]
+    lpuart.o(.ARM.exidx.text.LPUART_IntFlagClearAll) refers to lpuart.o(.text.LPUART_IntFlagClearAll) for [Anonymous Symbol]
+    lpuart.o(.ARM.exidx.text.LPUART_IntFlagGet) refers to lpuart.o(.text.LPUART_IntFlagGet) for [Anonymous Symbol]
+    lpuart.o(.ARM.exidx.text.LPUART_IntFlagClear) refers to lpuart.o(.text.LPUART_IntFlagClear) for [Anonymous Symbol]
+    lpuart.o(.ARM.exidx.text.LPUART_TransmitPoll) refers to lpuart.o(.text.LPUART_TransmitPoll) for [Anonymous Symbol]
+    lpuart.o(.ARM.exidx.text.LPUART_TransmitPollTimeOut) refers to lpuart.o(.text.LPUART_TransmitPollTimeOut) for [Anonymous Symbol]
+    lpuart.o(.ARM.exidx.text.LPUART_DataTransmit) refers to lpuart.o(.text.LPUART_DataTransmit) for [Anonymous Symbol]
+    lpuart.o(.ARM.exidx.text.LPUART_ReceivePoll) refers to lpuart.o(.text.LPUART_ReceivePoll) for [Anonymous Symbol]
+    lpuart.o(.ARM.exidx.text.LPUART_ReceivePollTimeOut) refers to lpuart.o(.text.LPUART_ReceivePollTimeOut) for [Anonymous Symbol]
+    lpuart.o(.ARM.exidx.text.LPUART_DataReceive) refers to lpuart.o(.text.LPUART_DataReceive) for [Anonymous Symbol]
+    lpuart.o(.ARM.exidx.text.LPUART_Bit8Get) refers to lpuart.o(.text.LPUART_Bit8Get) for [Anonymous Symbol]
+    lpuart.o(.text.LPUART_StcInit) refers to sysctrl.o(.text.SYSCTRL_HclkFreqGet) for SYSCTRL_HclkFreqGet
+    lpuart.o(.ARM.exidx.text.LPUART_StcInit) refers to lpuart.o(.text.LPUART_StcInit) for [Anonymous Symbol]
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry10a.o(.ARM.Collect$$$$0000000D) for __rt_final_cpp
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry11a.o(.ARM.Collect$$$$0000000F) for __rt_final_exit
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry7b.o(.ARM.Collect$$$$00000008) for _main_clock
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry8b.o(.ARM.Collect$$$$0000000A) for _main_cpp_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry9a.o(.ARM.Collect$$$$0000000B) for _main_init
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry5.o(.ARM.Collect$$$$00000004) for _main_scatterload
+    entry.o(.ARM.Collect$$$$00000000) refers (Special) to entry2.o(.ARM.Collect$$$$00000001) for _main_stk
+    fadd.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    fadd.o(.text) refers to fepilogue.o(.text) for _float_epilogue
+    fdiv.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    fdiv.o(.text) refers to fepilogue.o(.text) for _float_round
+    dmul.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dmul.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    ffltui.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    ffltui.o(.text) refers to fepilogue.o(.text) for _float_epilogue
+    dfltui.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dfltui.o(.text) refers to depilogue.o(.text) for _double_epilogue
+    ffixui.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dfixui.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    dfixui.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    entry2.o(.ARM.Collect$$$$00000001) refers to entry2.o(.ARM.Collect$$$$00002712) for __lit__00000000
+    entry2.o(.ARM.Collect$$$$00002712) refers to startup_hc32l021.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to startup_hc32l021.o(STACK) for __initial_sp
+    entry2.o(__vectab_stack_and_reset_area) refers to entry.o(.ARM.Collect$$$$00000000) for __main
+    entry5.o(.ARM.Collect$$$$00000004) refers to init.o(.text) for __scatterload
+    entry9a.o(.ARM.Collect$$$$0000000B) refers to system_hc32l021.o(.text.$Sub$$main) for main
+    entry9b.o(.ARM.Collect$$$$0000000C) refers to system_hc32l021.o(.text.$Sub$$main) for main
+    fepilogue.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    depilogue.o(.text) refers (Special) to iusefp.o(.text) for __I$use$fp
+    depilogue.o(.text) refers to depilogue.o(i.__ARM_clz) for __ARM_clz
+    depilogue.o(.text) refers to llshl.o(.text) for __aeabi_llsl
+    depilogue.o(.text) refers to llushr.o(.text) for __aeabi_llsr
+    init.o(.text) refers to entry5.o(.ARM.Collect$$$$00000004) for __main_after_scatterload
+    depilogue.o(i.__ARM_clz) refers (Special) to iusefp.o(.text) for __I$use$fp
+
+
+==============================================================================
+
+Removing Unused input sections from the image.
+
+    Removing system_hc32l021.o(.text), (0 bytes).
+    Removing system_hc32l021.o(.ARM.exidx.text.SystemCoreClockUpdate), (8 bytes).
+    Removing system_hc32l021.o(.ARM.exidx.text.SystemInit), (8 bytes).
+    Removing system_hc32l021.o(.ARM.exidx.text.$Sub$$main), (8 bytes).
+    Removing startup_hc32l021.o(HEAP), (512 bytes).
+    Removing board_stkhc32l021.o(.text), (0 bytes).
+    Removing board_stkhc32l021.o(.ARM.exidx.text.STK_EvsyncConfig), (8 bytes).
+    Removing board_stkhc32l021.o(.ARM.exidx.text.STK_AIMConfig), (8 bytes).
+    Removing board_stkhc32l021.o(.ARM.exidx.text.STK_LEDConfig), (8 bytes).
+    Removing board_stkhc32l021.o(.text.STK_ChipInfoGet), (44 bytes).
+    Removing board_stkhc32l021.o(.ARM.exidx.text.STK_ChipInfoGet), (8 bytes).
+    Removing board_stkhc32l021.o(.ARM.exidx.text.Btim0Config), (8 bytes).
+    Removing board_stkhc32l021.o(.ARM.exidx.text.Btim1Config), (8 bytes).
+    Removing interrupts_hc32l021.o(.text), (0 bytes).
+    Removing interrupts_hc32l021.o(.ARM.exidx.text.EnableNvic), (8 bytes).
+    Removing interrupts_hc32l021.o(.ARM.exidx.text.SysTick_IRQHandler), (8 bytes).
+    Removing interrupts_hc32l021.o(.text.PortA_IRQHandler), (2 bytes).
+    Removing interrupts_hc32l021.o(.ARM.exidx.text.PortA_IRQHandler), (8 bytes).
+    Removing interrupts_hc32l021.o(.ARM.exidx.text.PortB_IRQHandler), (8 bytes).
+    Removing interrupts_hc32l021.o(.ARM.exidx.text.Atim3_IRQHandler), (8 bytes).
+    Removing interrupts_hc32l021.o(.ARM.exidx.text.LpUart0_IRQHandler), (8 bytes).
+    Removing interrupts_hc32l021.o(.ARM.exidx.text.LpUart1_IRQHandler), (8 bytes).
+    Removing interrupts_hc32l021.o(.ARM.exidx.text.Spi_IRQHandler), (8 bytes).
+    Removing interrupts_hc32l021.o(.text.Ctim0_IRQHandler), (2 bytes).
+    Removing interrupts_hc32l021.o(.ARM.exidx.text.Ctim0_IRQHandler), (8 bytes).
+    Removing interrupts_hc32l021.o(.ARM.exidx.text.Ctim1_IRQHandler), (8 bytes).
+    Removing interrupts_hc32l021.o(.text.Hsi2c_IRQHandler), (2 bytes).
+    Removing interrupts_hc32l021.o(.ARM.exidx.text.Hsi2c_IRQHandler), (8 bytes).
+    Removing interrupts_hc32l021.o(.ARM.exidx.text.Iwdt_IRQHandler), (8 bytes).
+    Removing interrupts_hc32l021.o(.ARM.exidx.text.Rtc_IRQHandler), (8 bytes).
+    Removing interrupts_hc32l021.o(.ARM.exidx.text.Adc_IRQHandler), (8 bytes).
+    Removing interrupts_hc32l021.o(.ARM.exidx.text.Vc0_IRQHandler), (8 bytes).
+    Removing interrupts_hc32l021.o(.ARM.exidx.text.Vc1_IRQHandler), (8 bytes).
+    Removing interrupts_hc32l021.o(.ARM.exidx.text.Lvd_IRQHandler), (8 bytes).
+    Removing interrupts_hc32l021.o(.ARM.exidx.text.Flash_IRQHandler), (8 bytes).
+    Removing interrupts_hc32l021.o(.ARM.exidx.text.Ctrim_Clkdet_IRQHandler), (8 bytes).
+    Removing interrupts_hc32l021.o(.ARM.exidx.text.HardFault_Handler), (8 bytes).
+    Removing interrupts_hc32l021.o(.ARM.exidx.text.SysTick_Handler), (8 bytes).
+    Removing interrupts_hc32l021.o(.ARM.exidx.text.PORTA_IRQHandler), (8 bytes).
+    Removing interrupts_hc32l021.o(.ARM.exidx.text.PORTB_IRQHandler), (8 bytes).
+    Removing interrupts_hc32l021.o(.ARM.exidx.text.ATIM3_IRQHandler), (8 bytes).
+    Removing interrupts_hc32l021.o(.ARM.exidx.text.LPUART0_IRQHandler), (8 bytes).
+    Removing interrupts_hc32l021.o(.ARM.exidx.text.LPUART1_IRQHandler), (8 bytes).
+    Removing interrupts_hc32l021.o(.ARM.exidx.text.SPI_IRQHandler), (8 bytes).
+    Removing interrupts_hc32l021.o(.ARM.exidx.text.CTIM0_IRQHandler), (8 bytes).
+    Removing interrupts_hc32l021.o(.ARM.exidx.text.CTIM1_IRQHandler), (8 bytes).
+    Removing interrupts_hc32l021.o(.ARM.exidx.text.HSI2C_IRQHandler), (8 bytes).
+    Removing interrupts_hc32l021.o(.ARM.exidx.text.IWDT_IRQHandler), (8 bytes).
+    Removing interrupts_hc32l021.o(.ARM.exidx.text.RTC_IRQHandler), (8 bytes).
+    Removing interrupts_hc32l021.o(.ARM.exidx.text.ADC_IRQHandler), (8 bytes).
+    Removing interrupts_hc32l021.o(.ARM.exidx.text.VC0_IRQHandler), (8 bytes).
+    Removing interrupts_hc32l021.o(.ARM.exidx.text.VC1_IRQHandler), (8 bytes).
+    Removing interrupts_hc32l021.o(.ARM.exidx.text.LVD_IRQHandler), (8 bytes).
+    Removing interrupts_hc32l021.o(.ARM.exidx.text.FLASH_IRQHandler), (8 bytes).
+    Removing interrupts_hc32l021.o(.ARM.exidx.text.CTRIM_CLKDET_IRQHandler), (8 bytes).
+    Removing boot_param.o(.text), (0 bytes).
+    Removing boot_param.o(.ARM.exidx.text.BootParam_CalcHeaderCrc), (8 bytes).
+    Removing boot_param.o(.ARM.exidx.text.HC32_CalCrc16), (8 bytes).
+    Removing boot_param.o(.ARM.exidx.text.BootParam_Read), (8 bytes).
+    Removing boot_param.o(.text.HC32_FlashReadBytes), (18 bytes).
+    Removing boot_param.o(.ARM.exidx.text.HC32_FlashReadBytes), (8 bytes).
+    Removing boot_param.o(.ARM.exidx.text.BootParam_WriteState), (8 bytes).
+    Removing boot_param.o(.ARM.exidx.text.HC32_FlashEraseSector), (8 bytes).
+    Removing boot_param.o(.ARM.exidx.text.HC32_FlashWriteBytes), (8 bytes).
+    Removing main.o(.text), (0 bytes).
+    Removing main.o(.ARM.exidx.text.main), (8 bytes).
+    Removing main.o(.ARM.exidx.text.APP_DebugLog), (8 bytes).
+    Removing main.o(.ARM.exidx.text.Ctim0_IRQHandler), (8 bytes).
+    Removing main.o(.ARM.exidx.text.PortA_IRQHandler), (8 bytes).
+    Removing main.o(.ARM.use_no_argv), (4 bytes).
+    Removing i2c_iap_app.o(.text), (0 bytes).
+    Removing i2c_iap_app.o(.ARM.exidx.text.Hsi2c_IRQHandler), (8 bytes).
+    Removing i2c_iap_app.o(.ARM.exidx.text.IAP_APP_Init), (8 bytes).
+    Removing i2c_iap_app.o(.ARM.exidx.text.IAP_APP_Task), (8 bytes).
+    Removing i2c_iap_app.o(.ARM.exidx.text.APP_BuildResponse), (8 bytes).
+    Removing sysctrl.o(.text), (0 bytes).
+    Removing sysctrl.o(.text.SYSCTRL_ClockInit), (132 bytes).
+    Removing sysctrl.o(.ARM.exidx.text.SYSCTRL_ClockInit), (8 bytes).
+    Removing sysctrl.o(.text.SYSCTRL_ClockSrcEnable), (324 bytes).
+    Removing sysctrl.o(.ARM.exidx.text.SYSCTRL_ClockSrcEnable), (8 bytes).
+    Removing sysctrl.o(.text.SYSCTRL_SysClockSwitch), (168 bytes).
+    Removing sysctrl.o(.ARM.exidx.text.SYSCTRL_SysClockSwitch), (8 bytes).
+    Removing sysctrl.o(.text.SYSCTRL_HclkDivSet), (40 bytes).
+    Removing sysctrl.o(.ARM.exidx.text.SYSCTRL_HclkDivSet), (8 bytes).
+    Removing sysctrl.o(.text.SYSCTRL_ClockSrcDisable), (132 bytes).
+    Removing sysctrl.o(.ARM.exidx.text.SYSCTRL_ClockSrcDisable), (8 bytes).
+    Removing sysctrl.o(.ARM.exidx.text.SYSCTRL_HclkFreqGet), (8 bytes).
+    Removing sysctrl.o(.text.SYSCTRL_RC48MTrimSet), (52 bytes).
+    Removing sysctrl.o(.ARM.exidx.text.SYSCTRL_RC48MTrimSet), (8 bytes).
+    Removing sysctrl.o(.text.SYSCTRL_RCLTrimSet), (28 bytes).
+    Removing sysctrl.o(.ARM.exidx.text.SYSCTRL_RCLTrimSet), (8 bytes).
+    Removing sysctrl.o(.text.SYSCTRL_XTLStableTimeSet), (20 bytes).
+    Removing sysctrl.o(.ARM.exidx.text.SYSCTRL_XTLStableTimeSet), (8 bytes).
+    Removing sysctrl.o(.text.SYSCTRL_XTLDrvConfig), (24 bytes).
+    Removing sysctrl.o(.ARM.exidx.text.SYSCTRL_XTLDrvConfig), (8 bytes).
+    Removing sysctrl.o(.text.SYSCTRL_XTLFailureConfig), (52 bytes).
+    Removing sysctrl.o(.ARM.exidx.text.SYSCTRL_XTLFailureConfig), (8 bytes).
+    Removing sysctrl.o(.text.SYSCTRL_XTLFailureIntEnable), (16 bytes).
+    Removing sysctrl.o(.ARM.exidx.text.SYSCTRL_XTLFailureIntEnable), (8 bytes).
+    Removing sysctrl.o(.text.SYSCTRL_XTLFailureIntDisable), (16 bytes).
+    Removing sysctrl.o(.ARM.exidx.text.SYSCTRL_XTLFailureIntDisable), (8 bytes).
+    Removing sysctrl.o(.text.SYSCTRL_XTLFailureIntFlagGet), (16 bytes).
+    Removing sysctrl.o(.ARM.exidx.text.SYSCTRL_XTLFailureIntFlagGet), (8 bytes).
+    Removing sysctrl.o(.text.SYSCTRL_XTLFailureIntFlagClear), (20 bytes).
+    Removing sysctrl.o(.ARM.exidx.text.SYSCTRL_XTLFailureIntFlagClear), (8 bytes).
+    Removing sysctrl.o(.text.SYSCTRL_XTLAlwaysOnEnable), (32 bytes).
+    Removing sysctrl.o(.ARM.exidx.text.SYSCTRL_XTLAlwaysOnEnable), (8 bytes).
+    Removing sysctrl.o(.text.SYSCTRL_XTLAlwaysOnDisable), (32 bytes).
+    Removing sysctrl.o(.ARM.exidx.text.SYSCTRL_XTLAlwaysOnDisable), (8 bytes).
+    Removing sysctrl.o(.ARM.exidx.text.SYSCTRL_PeriphClockEnable), (8 bytes).
+    Removing sysctrl.o(.text.SYSCTRL_PeriphClockDisable), (48 bytes).
+    Removing sysctrl.o(.ARM.exidx.text.SYSCTRL_PeriphClockDisable), (8 bytes).
+    Removing sysctrl.o(.text.SYSCTRL_PeriphClockStatusGet), (44 bytes).
+    Removing sysctrl.o(.ARM.exidx.text.SYSCTRL_PeriphClockStatusGet), (8 bytes).
+    Removing sysctrl.o(.ARM.exidx.text.SYSCTRL_FuncEnable), (8 bytes).
+    Removing sysctrl.o(.text.SYSCTRL_FuncDisable), (32 bytes).
+    Removing sysctrl.o(.ARM.exidx.text.SYSCTRL_FuncDisable), (8 bytes).
+    Removing sysctrl.o(.text.SYSCTRL_WakeupByRC48M), (40 bytes).
+    Removing sysctrl.o(.ARM.exidx.text.SYSCTRL_WakeupByRC48M), (8 bytes).
+    Removing sysctrl.o(.text.SYSCTRL_ClockDeInit), (116 bytes).
+    Removing sysctrl.o(.ARM.exidx.text.SYSCTRL_ClockDeInit), (8 bytes).
+    Removing sysctrl.o(.ARM.exidx.text.SYSCTRL_PeriphReset), (8 bytes).
+    Removing sysctrl.o(.text.SYSCTRL_ResetFlagGet), (20 bytes).
+    Removing sysctrl.o(.ARM.exidx.text.SYSCTRL_ResetFlagGet), (8 bytes).
+    Removing sysctrl.o(.text.SYSCTRL_ResetFlagClear), (16 bytes).
+    Removing sysctrl.o(.ARM.exidx.text.SYSCTRL_ResetFlagClear), (8 bytes).
+    Removing sysctrl.o(.text.SYSCTRL_ResetFlagClearAll), (12 bytes).
+    Removing sysctrl.o(.ARM.exidx.text.SYSCTRL_ResetFlagClearAll), (8 bytes).
+    Removing sysctrl.o(.text.SYSCTRL_DebugActiveEnable), (16 bytes).
+    Removing sysctrl.o(.ARM.exidx.text.SYSCTRL_DebugActiveEnable), (8 bytes).
+    Removing sysctrl.o(.text.SYSCTRL_DebugActiveDisable), (16 bytes).
+    Removing sysctrl.o(.ARM.exidx.text.SYSCTRL_DebugActiveDisable), (8 bytes).
+    Removing sysctrl.o(.text.SYSCTRL_ClockStcInit), (8 bytes).
+    Removing sysctrl.o(.ARM.exidx.text.SYSCTRL_ClockStcInit), (8 bytes).
+    Removing gpio.o(.text), (0 bytes).
+    Removing gpio.o(.ARM.exidx.text.GPIO_Init), (8 bytes).
+    Removing gpio.o(.ARM.exidx.text.GPIO_IntFlagGet), (8 bytes).
+    Removing gpio.o(.ARM.exidx.text.GPIO_IntFlagClear), (8 bytes).
+    Removing gpio.o(.ARM.exidx.text.GPIO_StcInit), (8 bytes).
+    Removing btim.o(.text), (0 bytes).
+    Removing btim.o(.ARM.exidx.text.BTIM_Init), (8 bytes).
+    Removing btim.o(.ARM.exidx.text.BTIM_CounterSet), (8 bytes).
+    Removing btim.o(.text.BTIM_CounterGet), (6 bytes).
+    Removing btim.o(.ARM.exidx.text.BTIM_CounterGet), (8 bytes).
+    Removing btim.o(.text.BTIM_AutoReloadSet), (4 bytes).
+    Removing btim.o(.ARM.exidx.text.BTIM_AutoReloadSet), (8 bytes).
+    Removing btim.o(.ARM.exidx.text.BTIM_Enable), (8 bytes).
+    Removing btim.o(.ARM.exidx.text.BTIM_Disable), (8 bytes).
+    Removing btim.o(.text.BTIM_ModeSet), (14 bytes).
+    Removing btim.o(.ARM.exidx.text.BTIM_ModeSet), (8 bytes).
+    Removing btim.o(.text.BTIM_ToggleEnable), (10 bytes).
+    Removing btim.o(.ARM.exidx.text.BTIM_ToggleEnable), (8 bytes).
+    Removing btim.o(.text.BTIM_ToggleDisable), (10 bytes).
+    Removing btim.o(.ARM.exidx.text.BTIM_ToggleDisable), (8 bytes).
+    Removing btim.o(.text.BTIM_CounterClockDivSet), (14 bytes).
+    Removing btim.o(.ARM.exidx.text.BTIM_CounterClockDivSet), (8 bytes).
+    Removing btim.o(.text.BTIM_OneShotSet), (12 bytes).
+    Removing btim.o(.ARM.exidx.text.BTIM_OneShotSet), (8 bytes).
+    Removing btim.o(.text.BTIM_TriggerSrcSet), (16 bytes).
+    Removing btim.o(.ARM.exidx.text.BTIM_TriggerSrcSet), (8 bytes).
+    Removing btim.o(.text.BTIM_ExternInputPolaritySet), (16 bytes).
+    Removing btim.o(.ARM.exidx.text.BTIM_ExternInputPolaritySet), (8 bytes).
+    Removing btim.o(.ARM.exidx.text.BTIM_IntEnable), (8 bytes).
+    Removing btim.o(.text.BTIM_IntDisable), (8 bytes).
+    Removing btim.o(.ARM.exidx.text.BTIM_IntDisable), (8 bytes).
+    Removing btim.o(.ARM.exidx.text.BTIM_IntFlagGet), (8 bytes).
+    Removing btim.o(.ARM.exidx.text.BTIM_IntFlagClear), (8 bytes).
+    Removing btim.o(.text.BTIM_AifrFlagGet), (14 bytes).
+    Removing btim.o(.ARM.exidx.text.BTIM_AifrFlagGet), (8 bytes).
+    Removing btim.o(.text.BTIM_AicrFlagClear), (8 bytes).
+    Removing btim.o(.ARM.exidx.text.BTIM_AicrFlagClear), (8 bytes).
+    Removing btim.o(.ARM.exidx.text.BTIM_StcInit), (8 bytes).
+    Removing ddl.o(.text), (0 bytes).
+    Removing ddl.o(.text.Log2), (22 bytes).
+    Removing ddl.o(.ARM.exidx.text.Log2), (8 bytes).
+    Removing ddl.o(.ARM.exidx.text.DDL_MemoryClear), (8 bytes).
+    Removing ddl.o(.ARM.exidx.text.DDL_Delay1ms), (8 bytes).
+    Removing ddl.o(.text.DDL_Delay100us), (68 bytes).
+    Removing ddl.o(.ARM.exidx.text.DDL_Delay100us), (8 bytes).
+    Removing ddl.o(.text.DDL_Delay10us), (68 bytes).
+    Removing ddl.o(.ARM.exidx.text.DDL_Delay10us), (8 bytes).
+    Removing hsi2c.o(.text), (0 bytes).
+    Removing hsi2c.o(.text.HSI2C_MasterInit), (124 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_MasterInit), (8 bytes).
+    Removing hsi2c.o(.text.HSI2C_MasterReset), (10 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_MasterReset), (8 bytes).
+    Removing hsi2c.o(.text.HSI2C_MasterMcfgr1Config), (30 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_MasterMcfgr1Config), (8 bytes).
+    Removing hsi2c.o(.text.HSI2C_MasterMcfgr2Config), (68 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_MasterMcfgr2Config), (8 bytes).
+    Removing hsi2c.o(.text.HSI2C_MasterMcfgr3Config), (28 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_MasterMcfgr3Config), (8 bytes).
+    Removing hsi2c.o(.text.HSI2C_MasterBaudRateSet), (450 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_MasterBaudRateSet), (8 bytes).
+    Removing hsi2c.o(.text.HSI2C_SlaveDisable), (14 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_SlaveDisable), (8 bytes).
+    Removing hsi2c.o(.text.HSI2C_MasterEnable), (10 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_MasterEnable), (8 bytes).
+    Removing hsi2c.o(.text.HSI2C_MasterTransferInt), (96 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_MasterTransferInt), (8 bytes).
+    Removing hsi2c.o(.text.HSI2C_MasterFlagGet), (14 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_MasterFlagGet), (8 bytes).
+    Removing hsi2c.o(.text.HSI2C_MasterIntDisable), (8 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_MasterIntDisable), (8 bytes).
+    Removing hsi2c.o(.text.HSI2C_MasterFlagClear), (8 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_MasterFlagClear), (8 bytes).
+    Removing hsi2c.o(.text.HSI2C_MasterIntEnable), (8 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_MasterIntEnable), (8 bytes).
+    Removing hsi2c.o(.text.HSI2C_MasterStatusMachineStart), (72 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_MasterStatusMachineStart), (8 bytes).
+    Removing hsi2c.o(.text.HSI2C_MasterStart), (14 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_MasterStart), (8 bytes).
+    Removing hsi2c.o(.text.HSI2C_MasterStatusMachineSubAddr), (84 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_MasterStatusMachineSubAddr), (8 bytes).
+    Removing hsi2c.o(.text.HSI2C_MasterStatusMachineRestart), (40 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_MasterStatusMachineRestart), (8 bytes).
+    Removing hsi2c.o(.text.HSI2C_MasterStatusMachineRxCmd), (64 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_MasterStatusMachineRxCmd), (8 bytes).
+    Removing hsi2c.o(.text.HSI2C_MasterStatusMachineTrans), (48 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_MasterStatusMachineTrans), (8 bytes).
+    Removing hsi2c.o(.text.HSI2C_MasterStop), (8 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_MasterStop), (8 bytes).
+    Removing hsi2c.o(.text.HSI2C_MasterStatusMachineStop), (36 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_MasterStatusMachineStop), (8 bytes).
+    Removing hsi2c.o(.text.HSI2C_MasterTransferPoll), (356 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_MasterTransferPoll), (8 bytes).
+    Removing hsi2c.o(.text.HSI2C_MasterErrorGet), (36 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_MasterErrorGet), (8 bytes).
+    Removing hsi2c.o(.text.HSI2C_MasterWriteData), (4 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_MasterWriteData), (8 bytes).
+    Removing hsi2c.o(.text.HSI2C_MasterReadData), (16 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_MasterReadData), (8 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_SlaveInit), (8 bytes).
+    Removing hsi2c.o(.text.HSI2C_SlaveReset), (14 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_SlaveReset), (8 bytes).
+    Removing hsi2c.o(.text.HSI2C_SlaveScr1Config), (14 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_SlaveScr1Config), (8 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_SlaveScr2Config), (8 bytes).
+    Removing hsi2c.o(.text.HSI2C_MasterDisable), (10 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_MasterDisable), (8 bytes).
+    Removing hsi2c.o(.text.HSI2C_SlaveEnable), (14 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_SlaveEnable), (8 bytes).
+    Removing hsi2c.o(.text.HSI2C_SlaveTransferInt), (112 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_SlaveTransferInt), (8 bytes).
+    Removing hsi2c.o(.text.HSI2C_SlaveFlagGet), (18 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_SlaveFlagGet), (8 bytes).
+    Removing hsi2c.o(.text.HSI2C_SlaveIntDisable), (12 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_SlaveIntDisable), (8 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_SlaveFlagClear), (8 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_SlaveIntEnable), (8 bytes).
+    Removing hsi2c.o(.text.HSI2C_SlaveTransferPoll), (344 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_SlaveTransferPoll), (8 bytes).
+    Removing hsi2c.o(.text.HSI2C_SlaveErrorGet), (26 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_SlaveErrorGet), (8 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_SlaveWriteData), (8 bytes).
+    Removing hsi2c.o(.text.HSI2C_SlaveTransAbort), (40 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_SlaveTransAbort), (8 bytes).
+    Removing hsi2c.o(.text.HSI2C_MasterDataMatchConfig), (32 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_MasterDataMatchConfig), (8 bytes).
+    Removing hsi2c.o(.text.HSI2C_MasterIntGet), (4 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_MasterIntGet), (8 bytes).
+    Removing hsi2c.o(.text.HSI2C_SlaveIntGet), (8 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_SlaveIntGet), (8 bytes).
+    Removing hsi2c.o(.text.HSI2C_MasterReceiveCmd), (10 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_MasterReceiveCmd), (8 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_SlaveReadData), (8 bytes).
+    Removing hsi2c.o(.text.HSI2C_SlaveWriteAddr), (36 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_SlaveWriteAddr), (8 bytes).
+    Removing hsi2c.o(.text.HSI2C_SlaveReadAddr), (28 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_SlaveReadAddr), (8 bytes).
+    Removing hsi2c.o(.text.HSI2C_MasterTransAbort), (36 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_MasterTransAbort), (8 bytes).
+    Removing hsi2c.o(.text.HSI2C_SlaveTransNack), (20 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_SlaveTransNack), (8 bytes).
+    Removing hsi2c.o(.text.HSI2C_10BitAddrMdHighBitsGet), (12 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_10BitAddrMdHighBitsGet), (8 bytes).
+    Removing hsi2c.o(.text.HSI2C_10BitAddrMdLowBitsGet), (4 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_10BitAddrMdLowBitsGet), (8 bytes).
+    Removing hsi2c.o(.text.HSI2C_MasterStcInit), (40 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_MasterStcInit), (8 bytes).
+    Removing hsi2c.o(.ARM.exidx.text.HSI2C_SlaveStcInit), (8 bytes).
+    Removing hsi2c.o(.bss..L_MergedGlobals), (80 bytes).
+    Removing hsi2c.o(.bss..L_MergedGlobals.1), (72 bytes).
+    Removing lpuart.o(.text), (0 bytes).
+    Removing lpuart.o(.ARM.exidx.text.LPUART_Init), (8 bytes).
+    Removing lpuart.o(.text.LPUART_XtlBselSet), (56 bytes).
+    Removing lpuart.o(.ARM.exidx.text.LPUART_XtlBselSet), (8 bytes).
+    Removing lpuart.o(.text.LPUART_MultiModeConfig), (16 bytes).
+    Removing lpuart.o(.ARM.exidx.text.LPUART_MultiModeConfig), (8 bytes).
+    Removing lpuart.o(.text.LPUART_HdModeEnable), (12 bytes).
+    Removing lpuart.o(.ARM.exidx.text.LPUART_HdModeEnable), (8 bytes).
+    Removing lpuart.o(.text.LPUART_HdModeDisable), (12 bytes).
+    Removing lpuart.o(.ARM.exidx.text.LPUART_HdModeDisable), (8 bytes).
+    Removing lpuart.o(.ARM.exidx.text.LPUART_FuncEnable), (8 bytes).
+    Removing lpuart.o(.text.LPUART_FuncDisable), (8 bytes).
+    Removing lpuart.o(.ARM.exidx.text.LPUART_FuncDisable), (8 bytes).
+    Removing lpuart.o(.text.LPUART_IntEnable), (8 bytes).
+    Removing lpuart.o(.ARM.exidx.text.LPUART_IntEnable), (8 bytes).
+    Removing lpuart.o(.text.LPUART_IntDisable), (8 bytes).
+    Removing lpuart.o(.ARM.exidx.text.LPUART_IntDisable), (8 bytes).
+    Removing lpuart.o(.text.LPUART_IntEnableGet), (14 bytes).
+    Removing lpuart.o(.ARM.exidx.text.LPUART_IntEnableGet), (8 bytes).
+    Removing lpuart.o(.text.LPUART_IntFlagGetAll), (6 bytes).
+    Removing lpuart.o(.ARM.exidx.text.LPUART_IntFlagGetAll), (8 bytes).
+    Removing lpuart.o(.text.LPUART_IntFlagClearAll), (10 bytes).
+    Removing lpuart.o(.ARM.exidx.text.LPUART_IntFlagClearAll), (8 bytes).
+    Removing lpuart.o(.text.LPUART_IntFlagGet), (14 bytes).
+    Removing lpuart.o(.ARM.exidx.text.LPUART_IntFlagGet), (8 bytes).
+    Removing lpuart.o(.text.LPUART_IntFlagClear), (8 bytes).
+    Removing lpuart.o(.ARM.exidx.text.LPUART_IntFlagClear), (8 bytes).
+    Removing lpuart.o(.text.LPUART_TransmitPoll), (50 bytes).
+    Removing lpuart.o(.ARM.exidx.text.LPUART_TransmitPoll), (8 bytes).
+    Removing lpuart.o(.text.LPUART_TransmitPollTimeOut), (74 bytes).
+    Removing lpuart.o(.ARM.exidx.text.LPUART_TransmitPollTimeOut), (8 bytes).
+    Removing lpuart.o(.text.LPUART_DataTransmit), (12 bytes).
+    Removing lpuart.o(.ARM.exidx.text.LPUART_DataTransmit), (8 bytes).
+    Removing lpuart.o(.text.LPUART_ReceivePoll), (54 bytes).
+    Removing lpuart.o(.ARM.exidx.text.LPUART_ReceivePoll), (8 bytes).
+    Removing lpuart.o(.text.LPUART_ReceivePollTimeOut), (62 bytes).
+    Removing lpuart.o(.ARM.exidx.text.LPUART_ReceivePollTimeOut), (8 bytes).
+    Removing lpuart.o(.text.LPUART_DataReceive), (6 bytes).
+    Removing lpuart.o(.ARM.exidx.text.LPUART_DataReceive), (8 bytes).
+    Removing lpuart.o(.text.LPUART_Bit8Get), (10 bytes).
+    Removing lpuart.o(.ARM.exidx.text.LPUART_Bit8Get), (8 bytes).
+    Removing lpuart.o(.ARM.exidx.text.LPUART_StcInit), (8 bytes).
+
+325 unused section(s) (total 6994 bytes) removed from the image.
+
+==============================================================================
+
+Image Symbol Table
+
+    Local Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    ../clib/microlib/division.c              0x00000000   Number         0  uidiv.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llushr.o ABSOLUTE
+    ../clib/microlib/longlong.c              0x00000000   Number         0  llshl.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpya.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpyb.o ABSOLUTE
+    ../clib/microlib/string/memset.c         0x00000000   Number         0  memseta.o ABSOLUTE
+    ../clib/microlib/stubs.s                 0x00000000   Number         0  iusefp.o ABSOLUTE
+    ../fplib/microlib/fpadd.c                0x00000000   Number         0  fadd.o ABSOLUTE
+    ../fplib/microlib/fpdiv.c                0x00000000   Number         0  fdiv.o ABSOLUTE
+    ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  depilogue.o ABSOLUTE
+    ../fplib/microlib/fpepilogue.c           0x00000000   Number         0  fepilogue.o ABSOLUTE
+    ../fplib/microlib/fpfix.c                0x00000000   Number         0  ffixui.o ABSOLUTE
+    ../fplib/microlib/fpfix.c                0x00000000   Number         0  dfixui.o ABSOLUTE
+    ../fplib/microlib/fpflt.c                0x00000000   Number         0  ffltui.o ABSOLUTE
+    ../fplib/microlib/fpflt.c                0x00000000   Number         0  dfltui.o ABSOLUTE
+    ../fplib/microlib/fpmul.c                0x00000000   Number         0  dmul.o ABSOLUTE
+    board_stkhc32l021.c                      0x00000000   Number         0  board_stkhc32l021.o ABSOLUTE
+    boot_param.c                             0x00000000   Number         0  boot_param.o ABSOLUTE
+    btim.c                                   0x00000000   Number         0  btim.o ABSOLUTE
+    dc.s                                     0x00000000   Number         0  dc.o ABSOLUTE
+    ddl.c                                    0x00000000   Number         0  ddl.o ABSOLUTE
+    gpio.c                                   0x00000000   Number         0  gpio.o ABSOLUTE
+    handlers.s                               0x00000000   Number         0  handlers.o ABSOLUTE
+    hsi2c.c                                  0x00000000   Number         0  hsi2c.o ABSOLUTE
+    i2c_iap_app.c                            0x00000000   Number         0  i2c_iap_app.o ABSOLUTE
+    init.s                                   0x00000000   Number         0  init.o ABSOLUTE
+    interrupts_hc32l021.c                    0x00000000   Number         0  interrupts_hc32l021.o ABSOLUTE
+    lpuart.c                                 0x00000000   Number         0  lpuart.o ABSOLUTE
+    main.c                                   0x00000000   Number         0  main.o ABSOLUTE
+    startup_hc32l021.s                       0x00000000   Number         0  startup_hc32l021.o ABSOLUTE
+    sysctrl.c                                0x00000000   Number         0  sysctrl.o ABSOLUTE
+    system_hc32l021.c                        0x00000000   Number         0  system_hc32l021.o ABSOLUTE
+    RESET                                    0x00002000   Section      192  startup_hc32l021.o(RESET)
+    .ARM.Collect$$$$00000000                 0x000020c0   Section        0  entry.o(.ARM.Collect$$$$00000000)
+    .ARM.Collect$$$$00000001                 0x000020c0   Section        4  entry2.o(.ARM.Collect$$$$00000001)
+    .ARM.Collect$$$$00000004                 0x000020c4   Section        4  entry5.o(.ARM.Collect$$$$00000004)
+    .ARM.Collect$$$$00000008                 0x000020c8   Section        0  entry7b.o(.ARM.Collect$$$$00000008)
+    .ARM.Collect$$$$0000000A                 0x000020c8   Section        0  entry8b.o(.ARM.Collect$$$$0000000A)
+    .ARM.Collect$$$$0000000B                 0x000020c8   Section        8  entry9a.o(.ARM.Collect$$$$0000000B)
+    .ARM.Collect$$$$0000000D                 0x000020d0   Section        0  entry10a.o(.ARM.Collect$$$$0000000D)
+    .ARM.Collect$$$$0000000F                 0x000020d0   Section        0  entry11a.o(.ARM.Collect$$$$0000000F)
+    .ARM.Collect$$$$00002712                 0x000020d0   Section        4  entry2.o(.ARM.Collect$$$$00002712)
+    __lit__00000000                          0x000020d0   Data           4  entry2.o(.ARM.Collect$$$$00002712)
+    .text                                    0x000020d4   Section       60  startup_hc32l021.o(.text)
+    .text                                    0x00002110   Section        0  uidiv.o(.text)
+    .text                                    0x0000213c   Section        0  memcpya.o(.text)
+    .text                                    0x00002160   Section        0  memseta.o(.text)
+    .text                                    0x00002184   Section        0  fadd.o(.text)
+    .text                                    0x00002236   Section        0  fdiv.o(.text)
+    .text                                    0x000022b4   Section        0  dmul.o(.text)
+    .text                                    0x00002384   Section        0  ffltui.o(.text)
+    .text                                    0x00002394   Section        0  dfltui.o(.text)
+    .text                                    0x000023b0   Section        0  ffixui.o(.text)
+    .text                                    0x000023d8   Section        0  dfixui.o(.text)
+    .text                                    0x00002414   Section        0  llushr.o(.text)
+    .text                                    0x00002436   Section        0  fepilogue.o(.text)
+    .text                                    0x00002436   Section        0  iusefp.o(.text)
+    .text                                    0x000024b8   Section        0  depilogue.o(.text)
+    .text                                    0x00002578   Section       36  init.o(.text)
+    .text                                    0x0000259c   Section        0  llshl.o(.text)
+    [Anonymous Symbol]                       0x000025bc   Section        0  system_hc32l021.o(.text.$Sub$$main)
+    [Anonymous Symbol]                       0x000025ca   Section        0  interrupts_hc32l021.o(.text.ADC_IRQHandler)
+    [Anonymous Symbol]                       0x000025d4   Section        0  i2c_iap_app.o(.text.APP_BuildResponse)
+    APP_BuildResponse                        0x000025d5   Thumb Code   100  i2c_iap_app.o(.text.APP_BuildResponse)
+    __arm_cp.3_0                             0x0000262c   Number         4  i2c_iap_app.o(.text.APP_BuildResponse)
+    __arm_cp.3_1                             0x00002630   Number         4  i2c_iap_app.o(.text.APP_BuildResponse)
+    __arm_cp.3_2                             0x00002634   Number         4  i2c_iap_app.o(.text.APP_BuildResponse)
+    [Anonymous Symbol]                       0x00002638   Section        0  main.o(.text.APP_DebugLog)
+    APP_DebugLog                             0x00002639   Thumb Code    40  main.o(.text.APP_DebugLog)
+    __arm_cp.1_0                             0x0000265c   Number         4  main.o(.text.APP_DebugLog)
+    [Anonymous Symbol]                       0x00002660   Section        0  interrupts_hc32l021.o(.text.ATIM3_IRQHandler)
+    [Anonymous Symbol]                       0x00002668   Section        0  interrupts_hc32l021.o(.text.Adc_IRQHandler)
+    [Anonymous Symbol]                       0x0000266a   Section        0  interrupts_hc32l021.o(.text.Atim3_IRQHandler)
+    [Anonymous Symbol]                       0x0000266c   Section        0  btim.o(.text.BTIM_CounterSet)
+    [Anonymous Symbol]                       0x00002670   Section        0  btim.o(.text.BTIM_Disable)
+    [Anonymous Symbol]                       0x0000267a   Section        0  btim.o(.text.BTIM_Enable)
+    [Anonymous Symbol]                       0x00002684   Section        0  btim.o(.text.BTIM_Init)
+    __arm_cp.0_0                             0x000026c0   Number         4  btim.o(.text.BTIM_Init)
+    __arm_cp.0_1                             0x000026c4   Number         4  btim.o(.text.BTIM_Init)
+    __arm_cp.0_2                             0x000026c8   Number         4  btim.o(.text.BTIM_Init)
+    [Anonymous Symbol]                       0x000026cc   Section        0  btim.o(.text.BTIM_IntEnable)
+    [Anonymous Symbol]                       0x000026d4   Section        0  btim.o(.text.BTIM_IntFlagClear)
+    [Anonymous Symbol]                       0x000026dc   Section        0  btim.o(.text.BTIM_IntFlagGet)
+    [Anonymous Symbol]                       0x000026ec   Section        0  btim.o(.text.BTIM_StcInit)
+    __arm_cp.19_0                            0x000026fc   Number         4  btim.o(.text.BTIM_StcInit)
+    [Anonymous Symbol]                       0x00002700   Section        0  boot_param.o(.text.BootParam_CalcHeaderCrc)
+    [Anonymous Symbol]                       0x0000270e   Section        0  boot_param.o(.text.BootParam_Read)
+    [Anonymous Symbol]                       0x00002724   Section        0  boot_param.o(.text.BootParam_WriteState)
+    __arm_cp.4_0                             0x00002768   Number         4  boot_param.o(.text.BootParam_WriteState)
+    __arm_cp.4_1                             0x0000276c   Number         4  boot_param.o(.text.BootParam_WriteState)
+    [Anonymous Symbol]                       0x00002770   Section        0  board_stkhc32l021.o(.text.Btim0Config)
+    [Anonymous Symbol]                       0x000027e0   Section        0  board_stkhc32l021.o(.text.Btim1Config)
+    __arm_cp.5_0                             0x00002850   Number         4  board_stkhc32l021.o(.text.Btim1Config)
+    [Anonymous Symbol]                       0x00002854   Section        0  interrupts_hc32l021.o(.text.CTIM0_IRQHandler)
+    [Anonymous Symbol]                       0x0000285c   Section        0  interrupts_hc32l021.o(.text.CTIM1_IRQHandler)
+    [Anonymous Symbol]                       0x00002864   Section        0  interrupts_hc32l021.o(.text.CTRIM_CLKDET_IRQHandler)
+    [Anonymous Symbol]                       0x0000286c   Section        0  main.o(.text.Ctim0_IRQHandler)
+    __arm_cp.2_0                             0x000028dc   Number         4  main.o(.text.Ctim0_IRQHandler)
+    __arm_cp.2_1                             0x000028e0   Number         4  main.o(.text.Ctim0_IRQHandler)
+    __arm_cp.2_2                             0x000028e4   Number         4  main.o(.text.Ctim0_IRQHandler)
+    [Anonymous Symbol]                       0x000028e8   Section        0  interrupts_hc32l021.o(.text.Ctim1_IRQHandler)
+    [Anonymous Symbol]                       0x000028ea   Section        0  interrupts_hc32l021.o(.text.Ctrim_Clkdet_IRQHandler)
+    [Anonymous Symbol]                       0x000028ec   Section        0  ddl.o(.text.DDL_Delay1ms)
+    __arm_cp.2_0                             0x00002924   Number         4  ddl.o(.text.DDL_Delay1ms)
+    __arm_cp.2_1                             0x00002928   Number         4  ddl.o(.text.DDL_Delay1ms)
+    [Anonymous Symbol]                       0x0000292c   Section        0  ddl.o(.text.DDL_MemoryClear)
+    [Anonymous Symbol]                       0x00002940   Section        0  interrupts_hc32l021.o(.text.EnableNvic)
+    __arm_cp.0_0                             0x000029b8   Number         4  interrupts_hc32l021.o(.text.EnableNvic)
+    __arm_cp.0_1                             0x000029bc   Number         4  interrupts_hc32l021.o(.text.EnableNvic)
+    __arm_cp.0_2                             0x000029c0   Number         4  interrupts_hc32l021.o(.text.EnableNvic)
+    __arm_cp.0_3                             0x000029c4   Number         4  interrupts_hc32l021.o(.text.EnableNvic)
+    [Anonymous Symbol]                       0x000029c8   Section        0  interrupts_hc32l021.o(.text.FLASH_IRQHandler)
+    [Anonymous Symbol]                       0x000029d0   Section        0  interrupts_hc32l021.o(.text.Flash_IRQHandler)
+    [Anonymous Symbol]                       0x000029d4   Section        0  gpio.o(.text.GPIO_Init)
+    __arm_cp.0_0                             0x00002b18   Number         4  gpio.o(.text.GPIO_Init)
+    [Anonymous Symbol]                       0x00002b1c   Section        0  gpio.o(.text.GPIO_IntFlagClear)
+    [Anonymous Symbol]                       0x00002b28   Section        0  gpio.o(.text.GPIO_IntFlagGet)
+    [Anonymous Symbol]                       0x00002b3a   Section        0  gpio.o(.text.GPIO_StcInit)
+    [Anonymous Symbol]                       0x00002b4c   Section        0  boot_param.o(.text.HC32_CalCrc16)
+    __arm_cp.1_0                             0x00002b98   Number         4  boot_param.o(.text.HC32_CalCrc16)
+    __arm_cp.1_1                             0x00002b9c   Number         4  boot_param.o(.text.HC32_CalCrc16)
+    __arm_cp.1_2                             0x00002ba0   Number         4  boot_param.o(.text.HC32_CalCrc16)
+    [Anonymous Symbol]                       0x00002ba4   Section        0  boot_param.o(.text.HC32_FlashEraseSector)
+    [Anonymous Symbol]                       0x00002c64   Section        0  boot_param.o(.text.HC32_FlashWriteBytes)
+    __arm_cp.6_0                             0x00002d68   Number         4  boot_param.o(.text.HC32_FlashWriteBytes)
+    __arm_cp.6_1                             0x00002d6c   Number         4  boot_param.o(.text.HC32_FlashWriteBytes)
+    __arm_cp.6_2                             0x00002d70   Number         4  boot_param.o(.text.HC32_FlashWriteBytes)
+    __arm_cp.6_3                             0x00002d74   Number         4  boot_param.o(.text.HC32_FlashWriteBytes)
+    [Anonymous Symbol]                       0x00002d78   Section        0  interrupts_hc32l021.o(.text.HSI2C_IRQHandler)
+    [Anonymous Symbol]                       0x00002d80   Section        0  hsi2c.o(.text.HSI2C_SlaveFlagClear)
+    [Anonymous Symbol]                       0x00002d8c   Section        0  hsi2c.o(.text.HSI2C_SlaveInit)
+    __arm_cp.25_0                            0x00002de8   Number         4  hsi2c.o(.text.HSI2C_SlaveInit)
+    __arm_cp.25_1                            0x00002dec   Number         4  hsi2c.o(.text.HSI2C_SlaveInit)
+    [Anonymous Symbol]                       0x00002df0   Section        0  hsi2c.o(.text.HSI2C_SlaveIntEnable)
+    [Anonymous Symbol]                       0x00002dfc   Section        0  hsi2c.o(.text.HSI2C_SlaveReadData)
+    [Anonymous Symbol]                       0x00002e10   Section        0  hsi2c.o(.text.HSI2C_SlaveScr2Config)
+    __arm_cp.28_0                            0x00002e4c   Number         4  hsi2c.o(.text.HSI2C_SlaveScr2Config)
+    __arm_cp.28_1                            0x00002e50   Number         4  hsi2c.o(.text.HSI2C_SlaveScr2Config)
+    [Anonymous Symbol]                       0x00002e54   Section        0  hsi2c.o(.text.HSI2C_SlaveStcInit)
+    [Anonymous Symbol]                       0x00002e6e   Section        0  hsi2c.o(.text.HSI2C_SlaveWriteData)
+    [Anonymous Symbol]                       0x00002e76   Section        0  interrupts_hc32l021.o(.text.HardFault_Handler)
+    [Anonymous Symbol]                       0x00002e88   Section        0  i2c_iap_app.o(.text.Hsi2c_IRQHandler)
+    __arm_cp.0_0                             0x00002ff4   Number         4  i2c_iap_app.o(.text.Hsi2c_IRQHandler)
+    __arm_cp.0_3                             0x00002ff8   Number         4  i2c_iap_app.o(.text.Hsi2c_IRQHandler)
+    __arm_cp.0_6                             0x00002ffc   Number         4  i2c_iap_app.o(.text.Hsi2c_IRQHandler)
+    [Anonymous Symbol]                       0x00003000   Section        0  i2c_iap_app.o(.text.IAP_APP_Init)
+    __arm_cp.1_2                             0x000030bc   Number         4  i2c_iap_app.o(.text.IAP_APP_Init)
+    __arm_cp.1_3                             0x000030c0   Number         4  i2c_iap_app.o(.text.IAP_APP_Init)
+    __arm_cp.1_5                             0x000030c4   Number         4  i2c_iap_app.o(.text.IAP_APP_Init)
+    __arm_cp.1_6                             0x000030c8   Number         4  i2c_iap_app.o(.text.IAP_APP_Init)
+    __arm_cp.1_7                             0x000030cc   Number         4  i2c_iap_app.o(.text.IAP_APP_Init)
+    [Anonymous Symbol]                       0x000030d0   Section        0  i2c_iap_app.o(.text.IAP_APP_Task)
+    __arm_cp.2_0                             0x00003240   Number         4  i2c_iap_app.o(.text.IAP_APP_Task)
+    __arm_cp.2_1                             0x00003244   Number         4  i2c_iap_app.o(.text.IAP_APP_Task)
+    __arm_cp.2_2                             0x00003248   Number         4  i2c_iap_app.o(.text.IAP_APP_Task)
+    __arm_cp.2_3                             0x0000324c   Number         4  i2c_iap_app.o(.text.IAP_APP_Task)
+    __arm_cp.2_4                             0x00003250   Number         4  i2c_iap_app.o(.text.IAP_APP_Task)
+    __arm_cp.2_5                             0x00003254   Number         4  i2c_iap_app.o(.text.IAP_APP_Task)
+    __arm_cp.2_6                             0x00003258   Number         4  i2c_iap_app.o(.text.IAP_APP_Task)
+    [Anonymous Symbol]                       0x0000325c   Section        0  interrupts_hc32l021.o(.text.IWDT_IRQHandler)
+    [Anonymous Symbol]                       0x00003264   Section        0  interrupts_hc32l021.o(.text.Iwdt_IRQHandler)
+    [Anonymous Symbol]                       0x00003266   Section        0  interrupts_hc32l021.o(.text.LPUART0_IRQHandler)
+    [Anonymous Symbol]                       0x0000326e   Section        0  interrupts_hc32l021.o(.text.LPUART1_IRQHandler)
+    [Anonymous Symbol]                       0x00003276   Section        0  lpuart.o(.text.LPUART_FuncEnable)
+    [Anonymous Symbol]                       0x00003280   Section        0  lpuart.o(.text.LPUART_Init)
+    __arm_cp.0_0                             0x00003350   Number         4  lpuart.o(.text.LPUART_Init)
+    __arm_cp.0_1                             0x00003354   Number         4  lpuart.o(.text.LPUART_Init)
+    __arm_cp.0_2                             0x00003358   Number         4  lpuart.o(.text.LPUART_Init)
+    __arm_cp.0_3                             0x0000335c   Number         4  lpuart.o(.text.LPUART_Init)
+    [Anonymous Symbol]                       0x00003360   Section        0  lpuart.o(.text.LPUART_StcInit)
+    __arm_cp.21_0                            0x00003388   Number         4  lpuart.o(.text.LPUART_StcInit)
+    [Anonymous Symbol]                       0x0000338c   Section        0  interrupts_hc32l021.o(.text.LVD_IRQHandler)
+    [Anonymous Symbol]                       0x00003394   Section        0  interrupts_hc32l021.o(.text.LpUart0_IRQHandler)
+    [Anonymous Symbol]                       0x00003396   Section        0  interrupts_hc32l021.o(.text.LpUart1_IRQHandler)
+    [Anonymous Symbol]                       0x00003398   Section        0  interrupts_hc32l021.o(.text.Lvd_IRQHandler)
+    [Anonymous Symbol]                       0x0000339a   Section        0  interrupts_hc32l021.o(.text.PORTA_IRQHandler)
+    [Anonymous Symbol]                       0x000033a2   Section        0  interrupts_hc32l021.o(.text.PORTB_IRQHandler)
+    [Anonymous Symbol]                       0x000033ac   Section        0  main.o(.text.PortA_IRQHandler)
+    __arm_cp.3_1                             0x000033d8   Number         4  main.o(.text.PortA_IRQHandler)
+    [Anonymous Symbol]                       0x000033dc   Section        0  interrupts_hc32l021.o(.text.PortB_IRQHandler)
+    [Anonymous Symbol]                       0x000033de   Section        0  interrupts_hc32l021.o(.text.RTC_IRQHandler)
+    [Anonymous Symbol]                       0x000033e6   Section        0  interrupts_hc32l021.o(.text.Rtc_IRQHandler)
+    [Anonymous Symbol]                       0x000033e8   Section        0  interrupts_hc32l021.o(.text.SPI_IRQHandler)
+    [Anonymous Symbol]                       0x000033f0   Section        0  board_stkhc32l021.o(.text.STK_AIMConfig)
+    __arm_cp.1_0                             0x00003424   Number         4  board_stkhc32l021.o(.text.STK_AIMConfig)
+    [Anonymous Symbol]                       0x00003428   Section        0  board_stkhc32l021.o(.text.STK_EvsyncConfig)
+    __arm_cp.0_0                             0x0000346c   Number         4  board_stkhc32l021.o(.text.STK_EvsyncConfig)
+    [Anonymous Symbol]                       0x00003470   Section        0  board_stkhc32l021.o(.text.STK_LEDConfig)
+    [Anonymous Symbol]                       0x000034a4   Section        0  sysctrl.o(.text.SYSCTRL_FuncEnable)
+    __arm_cp.20_0                            0x000034b8   Number         4  sysctrl.o(.text.SYSCTRL_FuncEnable)
+    [Anonymous Symbol]                       0x000034bc   Section        0  sysctrl.o(.text.SYSCTRL_HclkFreqGet)
+    __arm_cp.5_0                             0x0000350c   Number         4  sysctrl.o(.text.SYSCTRL_HclkFreqGet)
+    __arm_cp.5_1                             0x00003510   Number         4  sysctrl.o(.text.SYSCTRL_HclkFreqGet)
+    [Anonymous Symbol]                       0x00003524   Section        0  sysctrl.o(.text.SYSCTRL_PeriphClockEnable)
+    __arm_cp.17_0                            0x00003548   Number         4  sysctrl.o(.text.SYSCTRL_PeriphClockEnable)
+    [Anonymous Symbol]                       0x0000354c   Section        0  sysctrl.o(.text.SYSCTRL_PeriphReset)
+    __arm_cp.24_0                            0x00003584   Number         4  sysctrl.o(.text.SYSCTRL_PeriphReset)
+    [Anonymous Symbol]                       0x00003588   Section        0  interrupts_hc32l021.o(.text.Spi_IRQHandler)
+    [Anonymous Symbol]                       0x0000358a   Section        0  interrupts_hc32l021.o(.text.SysTick_Handler)
+    [Anonymous Symbol]                       0x00003592   Section        0  interrupts_hc32l021.o(.text.SysTick_IRQHandler)
+    [Anonymous Symbol]                       0x00003594   Section        0  system_hc32l021.o(.text.SystemCoreClockUpdate)
+    __arm_cp.0_0                             0x000035a0   Number         4  system_hc32l021.o(.text.SystemCoreClockUpdate)
+    [Anonymous Symbol]                       0x000035a4   Section        0  system_hc32l021.o(.text.SystemInit)
+    __arm_cp.1_0                             0x000035dc   Number         4  system_hc32l021.o(.text.SystemInit)
+    __arm_cp.1_1                             0x000035e0   Number         4  system_hc32l021.o(.text.SystemInit)
+    __arm_cp.1_2                             0x000035e4   Number         4  system_hc32l021.o(.text.SystemInit)
+    __arm_cp.1_3                             0x000035e8   Number         4  system_hc32l021.o(.text.SystemInit)
+    __arm_cp.1_4                             0x000035ec   Number         4  system_hc32l021.o(.text.SystemInit)
+    __arm_cp.1_5                             0x000035f0   Number         4  system_hc32l021.o(.text.SystemInit)
+    __arm_cp.1_6                             0x000035f4   Number         4  system_hc32l021.o(.text.SystemInit)
+    __arm_cp.1_7                             0x000035f8   Number         4  system_hc32l021.o(.text.SystemInit)
+    [Anonymous Symbol]                       0x000035fc   Section        0  interrupts_hc32l021.o(.text.VC0_IRQHandler)
+    [Anonymous Symbol]                       0x00003604   Section        0  interrupts_hc32l021.o(.text.VC1_IRQHandler)
+    [Anonymous Symbol]                       0x0000360c   Section        0  interrupts_hc32l021.o(.text.Vc0_IRQHandler)
+    [Anonymous Symbol]                       0x0000360e   Section        0  interrupts_hc32l021.o(.text.Vc1_IRQHandler)
+    [Anonymous Symbol]                       0x00003610   Section        0  main.o(.text.main)
+    __arm_cp.0_0                             0x00003724   Number         4  main.o(.text.main)
+    __arm_cp.0_1                             0x00003728   Number         4  main.o(.text.main)
+    APP_DebugLogHex32.hex                    0x0000373c   Number         0  main.o(.text.main)
+    __arm_cp.0_4                             0x00003750   Number         4  main.o(.text.main)
+    __arm_cp.0_5                             0x00003754   Number         4  main.o(.text.main)
+    __arm_cp.0_6                             0x00003758   Number         4  main.o(.text.main)
+    __arm_cp.0_10                            0x000037bc   Number         4  main.o(.text.main)
+    __arm_cp.0_12                            0x000037c4   Number         4  main.o(.text.main)
+    __arm_cp.0_13                            0x000037c8   Number         4  main.o(.text.main)
+    i.__ARM_clz                              0x000037cc   Section        0  depilogue.o(i.__ARM_clz)
+    i.__scatterload_copy                     0x000037fa   Section       14  handlers.o(i.__scatterload_copy)
+    i.__scatterload_null                     0x00003808   Section        2  handlers.o(i.__scatterload_null)
+    i.__scatterload_zeroinit                 0x0000380a   Section       14  handlers.o(i.__scatterload_zeroinit)
+    [Anonymous Symbol]                       0x00003818   Section        0  main.o(.rodata.str1.1)
+    .L.str.6                                 0x00003818   Data          30  main.o(.rodata.str1.1)
+    .L.str.1                                 0x00003836   Data          28  main.o(.rodata.str1.1)
+    [Anonymous Symbol]                       0x20000008   Section        0  i2c_iap_app.o(.bss..L_MergedGlobals)
+    s_bSubAddrValid                          0x20000008   Data           1  i2c_iap_app.o(.bss..L_MergedGlobals)
+    s_u8RegStatus                            0x20000009   Data           1  i2c_iap_app.o(.bss..L_MergedGlobals)
+    s_bCtrlCommit                            0x2000000a   Data           1  i2c_iap_app.o(.bss..L_MergedGlobals)
+    s_u8RegError                             0x2000000b   Data           1  i2c_iap_app.o(.bss..L_MergedGlobals)
+    s_bJumpPending                           0x2000000c   Data           1  i2c_iap_app.o(.bss..L_MergedGlobals)
+    s_u8TxLenByteIdx                         0x2000000d   Data           1  i2c_iap_app.o(.bss..L_MergedGlobals)
+    s_u16SubAddr                             0x2000000e   Data           2  i2c_iap_app.o(.bss..L_MergedGlobals)
+    s_u16RxIdx                               0x20000010   Data           2  i2c_iap_app.o(.bss..L_MergedGlobals)
+    s_u16TxIdx                               0x20000012   Data           2  i2c_iap_app.o(.bss..L_MergedGlobals)
+    s_u16RegTxLen                            0x20000014   Data           2  i2c_iap_app.o(.bss..L_MergedGlobals)
+    s_u16RxFrameLen                          0x20000016   Data           2  i2c_iap_app.o(.bss..L_MergedGlobals)
+    [Anonymous Symbol]                       0x20000018   Section        0  i2c_iap_app.o(.bss.s_au8RxMailbox)
+    s_au8RxMailbox                           0x20000018   Data         530  i2c_iap_app.o(.bss.s_au8RxMailbox)
+    [Anonymous Symbol]                       0x2000022c   Section        0  i2c_iap_app.o(.bss.s_au8TxMailbox)
+    s_au8TxMailbox                           0x2000022c   Data         530  i2c_iap_app.o(.bss.s_au8TxMailbox)
+    STACK                                    0x20000440   Section     1024  startup_hc32l021.o(STACK)
+
+    Global Symbols
+
+    Symbol Name                              Value     Ov Type        Size  Object(Section)
+
+    BuildAttributes$$THM_ISAv3M$S$PE$A:L22$X:L11$S22$IEEE1$IW$~IW$USESV6$~STKCKD$USESV7$WCHAR32$ENUMINT$~SHL$OTIME$ROPI$EBA8$MICROLIB$REQ8$PRES8$EABIv2 0x00000000   Number         0  anon$$obj.o ABSOLUTE
+    __cpp_initialize__aeabi_                  - Undefined Weak Reference
+    __cxa_finalize                            - Undefined Weak Reference
+    __decompress                              - Undefined Weak Reference
+    _clock_init                               - Undefined Weak Reference
+    _microlib_exit                            - Undefined Weak Reference
+    __Vectors_Size                           0x000000c0   Number         0  startup_hc32l021.o ABSOLUTE
+    __Vectors                                0x00002000   Data           0  startup_hc32l021.o(RESET)
+    __Vectors_End                            0x000020c0   Data           0  startup_hc32l021.o(RESET)
+    __main                                   0x000020c1   Thumb Code     0  entry.o(.ARM.Collect$$$$00000000)
+    _main_stk                                0x000020c1   Thumb Code     0  entry2.o(.ARM.Collect$$$$00000001)
+    _main_scatterload                        0x000020c5   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    __main_after_scatterload                 0x000020c9   Thumb Code     0  entry5.o(.ARM.Collect$$$$00000004)
+    _main_clock                              0x000020c9   Thumb Code     0  entry7b.o(.ARM.Collect$$$$00000008)
+    _main_cpp_init                           0x000020c9   Thumb Code     0  entry8b.o(.ARM.Collect$$$$0000000A)
+    _main_init                               0x000020c9   Thumb Code     0  entry9a.o(.ARM.Collect$$$$0000000B)
+    __rt_final_cpp                           0x000020d1   Thumb Code     0  entry10a.o(.ARM.Collect$$$$0000000D)
+    __rt_final_exit                          0x000020d1   Thumb Code     0  entry11a.o(.ARM.Collect$$$$0000000F)
+    Reset_Handler                            0x000020d5   Thumb Code    26  startup_hc32l021.o(.text)
+    NMI_Handler                              0x000020ef   Thumb Code     2  startup_hc32l021.o(.text)
+    SVC_Handler                              0x000020f3   Thumb Code     2  startup_hc32l021.o(.text)
+    PendSV_Handler                           0x000020f5   Thumb Code     2  startup_hc32l021.o(.text)
+    __aeabi_uidiv                            0x00002111   Thumb Code     0  uidiv.o(.text)
+    __aeabi_uidivmod                         0x00002111   Thumb Code    44  uidiv.o(.text)
+    __aeabi_memcpy                           0x0000213d   Thumb Code    36  memcpya.o(.text)
+    __aeabi_memcpy4                          0x0000213d   Thumb Code     0  memcpya.o(.text)
+    __aeabi_memcpy8                          0x0000213d   Thumb Code     0  memcpya.o(.text)
+    __aeabi_memset                           0x00002161   Thumb Code    14  memseta.o(.text)
+    __aeabi_memset4                          0x00002161   Thumb Code     0  memseta.o(.text)
+    __aeabi_memset8                          0x00002161   Thumb Code     0  memseta.o(.text)
+    __aeabi_memclr                           0x0000216f   Thumb Code     4  memseta.o(.text)
+    __aeabi_memclr4                          0x0000216f   Thumb Code     0  memseta.o(.text)
+    __aeabi_memclr8                          0x0000216f   Thumb Code     0  memseta.o(.text)
+    _memset$wrapper                          0x00002173   Thumb Code    18  memseta.o(.text)
+    __aeabi_fadd                             0x00002185   Thumb Code   162  fadd.o(.text)
+    __aeabi_fsub                             0x00002227   Thumb Code     8  fadd.o(.text)
+    __aeabi_frsub                            0x0000222f   Thumb Code     8  fadd.o(.text)
+    __aeabi_fdiv                             0x00002237   Thumb Code   124  fdiv.o(.text)
+    __aeabi_dmul                             0x000022b5   Thumb Code   202  dmul.o(.text)
+    __aeabi_ui2f                             0x00002385   Thumb Code    14  ffltui.o(.text)
+    __aeabi_ui2d                             0x00002395   Thumb Code    24  dfltui.o(.text)
+    __aeabi_f2uiz                            0x000023b1   Thumb Code    40  ffixui.o(.text)
+    __aeabi_d2uiz                            0x000023d9   Thumb Code    50  dfixui.o(.text)
+    __aeabi_llsr                             0x00002415   Thumb Code    34  llushr.o(.text)
+    _ll_ushift_r                             0x00002415   Thumb Code     0  llushr.o(.text)
+    __I$use$fp                               0x00002437   Thumb Code     0  iusefp.o(.text)
+    _float_round                             0x00002437   Thumb Code    16  fepilogue.o(.text)
+    _float_epilogue                          0x00002447   Thumb Code   114  fepilogue.o(.text)
+    _double_round                            0x000024b9   Thumb Code    26  depilogue.o(.text)
+    _double_epilogue                         0x000024d3   Thumb Code   164  depilogue.o(.text)
+    __scatterload                            0x00002579   Thumb Code    28  init.o(.text)
+    __scatterload_rt2                        0x00002579   Thumb Code     0  init.o(.text)
+    __aeabi_llsl                             0x0000259d   Thumb Code    32  llshl.o(.text)
+    _ll_shift_l                              0x0000259d   Thumb Code     0  llshl.o(.text)
+    main                                     0x000025bd   Thumb Code    14  system_hc32l021.o(.text.$Sub$$main)
+    ADC_IRQHandler                           0x000025cb   Thumb Code     8  interrupts_hc32l021.o(.text.ADC_IRQHandler)
+    ATIM3_IRQHandler                         0x00002661   Thumb Code     8  interrupts_hc32l021.o(.text.ATIM3_IRQHandler)
+    Adc_IRQHandler                           0x00002669   Thumb Code     2  interrupts_hc32l021.o(.text.Adc_IRQHandler)
+    Atim3_IRQHandler                         0x0000266b   Thumb Code     2  interrupts_hc32l021.o(.text.Atim3_IRQHandler)
+    BTIM_CounterSet                          0x0000266d   Thumb Code     4  btim.o(.text.BTIM_CounterSet)
+    BTIM_Disable                             0x00002671   Thumb Code    10  btim.o(.text.BTIM_Disable)
+    BTIM_Enable                              0x0000267b   Thumb Code    10  btim.o(.text.BTIM_Enable)
+    BTIM_Init                                0x00002685   Thumb Code    72  btim.o(.text.BTIM_Init)
+    BTIM_IntEnable                           0x000026cd   Thumb Code     8  btim.o(.text.BTIM_IntEnable)
+    BTIM_IntFlagClear                        0x000026d5   Thumb Code     8  btim.o(.text.BTIM_IntFlagClear)
+    BTIM_IntFlagGet                          0x000026dd   Thumb Code    14  btim.o(.text.BTIM_IntFlagGet)
+    BTIM_StcInit                             0x000026ed   Thumb Code    20  btim.o(.text.BTIM_StcInit)
+    BootParam_CalcHeaderCrc                  0x00002701   Thumb Code    14  boot_param.o(.text.BootParam_CalcHeaderCrc)
+    BootParam_Read                           0x0000270f   Thumb Code    20  boot_param.o(.text.BootParam_Read)
+    BootParam_WriteState                     0x00002725   Thumb Code    76  boot_param.o(.text.BootParam_WriteState)
+    Btim0Config                              0x00002771   Thumb Code   120  board_stkhc32l021.o(.text.Btim0Config)
+    Btim1Config                              0x000027e1   Thumb Code   120  board_stkhc32l021.o(.text.Btim1Config)
+    CTIM0_IRQHandler                         0x00002855   Thumb Code     8  interrupts_hc32l021.o(.text.CTIM0_IRQHandler)
+    CTIM1_IRQHandler                         0x0000285d   Thumb Code     8  interrupts_hc32l021.o(.text.CTIM1_IRQHandler)
+    CTRIM_CLKDET_IRQHandler                  0x00002865   Thumb Code     8  interrupts_hc32l021.o(.text.CTRIM_CLKDET_IRQHandler)
+    Ctim0_IRQHandler                         0x0000286d   Thumb Code   124  main.o(.text.Ctim0_IRQHandler)
+    Ctim1_IRQHandler                         0x000028e9   Thumb Code     2  interrupts_hc32l021.o(.text.Ctim1_IRQHandler)
+    Ctrim_Clkdet_IRQHandler                  0x000028eb   Thumb Code     2  interrupts_hc32l021.o(.text.Ctrim_Clkdet_IRQHandler)
+    DDL_Delay1ms                             0x000028ed   Thumb Code    64  ddl.o(.text.DDL_Delay1ms)
+    DDL_MemoryClear                          0x0000292d   Thumb Code    20  ddl.o(.text.DDL_MemoryClear)
+    EnableNvic                               0x00002941   Thumb Code   136  interrupts_hc32l021.o(.text.EnableNvic)
+    FLASH_IRQHandler                         0x000029c9   Thumb Code     8  interrupts_hc32l021.o(.text.FLASH_IRQHandler)
+    Flash_IRQHandler                         0x000029d1   Thumb Code     2  interrupts_hc32l021.o(.text.Flash_IRQHandler)
+    GPIO_Init                                0x000029d5   Thumb Code   328  gpio.o(.text.GPIO_Init)
+    GPIO_IntFlagClear                        0x00002b1d   Thumb Code    12  gpio.o(.text.GPIO_IntFlagClear)
+    GPIO_IntFlagGet                          0x00002b29   Thumb Code    18  gpio.o(.text.GPIO_IntFlagGet)
+    GPIO_StcInit                             0x00002b3b   Thumb Code    16  gpio.o(.text.GPIO_StcInit)
+    HC32_CalCrc16                            0x00002b4d   Thumb Code    92  boot_param.o(.text.HC32_CalCrc16)
+    HC32_FlashEraseSector                    0x00002ba5   Thumb Code   208  boot_param.o(.text.HC32_FlashEraseSector)
+    HC32_FlashWriteBytes                     0x00002c65   Thumb Code   276  boot_param.o(.text.HC32_FlashWriteBytes)
+    HSI2C_IRQHandler                         0x00002d79   Thumb Code     8  interrupts_hc32l021.o(.text.HSI2C_IRQHandler)
+    HSI2C_SlaveFlagClear                     0x00002d81   Thumb Code    12  hsi2c.o(.text.HSI2C_SlaveFlagClear)
+    HSI2C_SlaveInit                          0x00002d8d   Thumb Code   100  hsi2c.o(.text.HSI2C_SlaveInit)
+    HSI2C_SlaveIntEnable                     0x00002df1   Thumb Code    12  hsi2c.o(.text.HSI2C_SlaveIntEnable)
+    HSI2C_SlaveReadData                      0x00002dfd   Thumb Code    20  hsi2c.o(.text.HSI2C_SlaveReadData)
+    HSI2C_SlaveScr2Config                    0x00002e11   Thumb Code    68  hsi2c.o(.text.HSI2C_SlaveScr2Config)
+    HSI2C_SlaveStcInit                       0x00002e55   Thumb Code    26  hsi2c.o(.text.HSI2C_SlaveStcInit)
+    HSI2C_SlaveWriteData                     0x00002e6f   Thumb Code     8  hsi2c.o(.text.HSI2C_SlaveWriteData)
+    HardFault_Handler                        0x00002e77   Thumb Code    16  interrupts_hc32l021.o(.text.HardFault_Handler)
+    Hsi2c_IRQHandler                         0x00002e89   Thumb Code   392  i2c_iap_app.o(.text.Hsi2c_IRQHandler)
+    IAP_APP_Init                             0x00003001   Thumb Code   220  i2c_iap_app.o(.text.IAP_APP_Init)
+    IAP_APP_Task                             0x000030d1   Thumb Code   396  i2c_iap_app.o(.text.IAP_APP_Task)
+    IWDT_IRQHandler                          0x0000325d   Thumb Code     8  interrupts_hc32l021.o(.text.IWDT_IRQHandler)
+    Iwdt_IRQHandler                          0x00003265   Thumb Code     2  interrupts_hc32l021.o(.text.Iwdt_IRQHandler)
+    LPUART0_IRQHandler                       0x00003267   Thumb Code     8  interrupts_hc32l021.o(.text.LPUART0_IRQHandler)
+    LPUART1_IRQHandler                       0x0000326f   Thumb Code     8  interrupts_hc32l021.o(.text.LPUART1_IRQHandler)
+    LPUART_FuncEnable                        0x00003277   Thumb Code     8  lpuart.o(.text.LPUART_FuncEnable)
+    LPUART_Init                              0x00003281   Thumb Code   224  lpuart.o(.text.LPUART_Init)
+    LPUART_StcInit                           0x00003361   Thumb Code    44  lpuart.o(.text.LPUART_StcInit)
+    LVD_IRQHandler                           0x0000338d   Thumb Code     8  interrupts_hc32l021.o(.text.LVD_IRQHandler)
+    LpUart0_IRQHandler                       0x00003395   Thumb Code     2  interrupts_hc32l021.o(.text.LpUart0_IRQHandler)
+    LpUart1_IRQHandler                       0x00003397   Thumb Code     2  interrupts_hc32l021.o(.text.LpUart1_IRQHandler)
+    Lvd_IRQHandler                           0x00003399   Thumb Code     2  interrupts_hc32l021.o(.text.Lvd_IRQHandler)
+    PORTA_IRQHandler                         0x0000339b   Thumb Code     8  interrupts_hc32l021.o(.text.PORTA_IRQHandler)
+    PORTB_IRQHandler                         0x000033a3   Thumb Code     8  interrupts_hc32l021.o(.text.PORTB_IRQHandler)
+    PortA_IRQHandler                         0x000033ad   Thumb Code    52  main.o(.text.PortA_IRQHandler)
+    PortB_IRQHandler                         0x000033dd   Thumb Code     2  interrupts_hc32l021.o(.text.PortB_IRQHandler)
+    RTC_IRQHandler                           0x000033df   Thumb Code     8  interrupts_hc32l021.o(.text.RTC_IRQHandler)
+    Rtc_IRQHandler                           0x000033e7   Thumb Code     2  interrupts_hc32l021.o(.text.Rtc_IRQHandler)
+    SPI_IRQHandler                           0x000033e9   Thumb Code     8  interrupts_hc32l021.o(.text.SPI_IRQHandler)
+    STK_AIMConfig                            0x000033f1   Thumb Code    56  board_stkhc32l021.o(.text.STK_AIMConfig)
+    STK_EvsyncConfig                         0x00003429   Thumb Code    76  board_stkhc32l021.o(.text.STK_EvsyncConfig)
+    STK_LEDConfig                            0x00003471   Thumb Code    56  board_stkhc32l021.o(.text.STK_LEDConfig)
+    SYSCTRL_FuncEnable                       0x000034a5   Thumb Code    32  sysctrl.o(.text.SYSCTRL_FuncEnable)
+    SYSCTRL_HclkFreqGet                      0x000034bd   Thumb Code   104  sysctrl.o(.text.SYSCTRL_HclkFreqGet)
+    SYSCTRL_PeriphClockEnable                0x00003525   Thumb Code    40  sysctrl.o(.text.SYSCTRL_PeriphClockEnable)
+    SYSCTRL_PeriphReset                      0x0000354d   Thumb Code    60  sysctrl.o(.text.SYSCTRL_PeriphReset)
+    Spi_IRQHandler                           0x00003589   Thumb Code     2  interrupts_hc32l021.o(.text.Spi_IRQHandler)
+    SysTick_Handler                          0x0000358b   Thumb Code     8  interrupts_hc32l021.o(.text.SysTick_Handler)
+    SysTick_IRQHandler                       0x00003593   Thumb Code     2  interrupts_hc32l021.o(.text.SysTick_IRQHandler)
+    SystemCoreClockUpdate                    0x00003595   Thumb Code    16  system_hc32l021.o(.text.SystemCoreClockUpdate)
+    SystemInit                               0x000035a5   Thumb Code    88  system_hc32l021.o(.text.SystemInit)
+    VC0_IRQHandler                           0x000035fd   Thumb Code     8  interrupts_hc32l021.o(.text.VC0_IRQHandler)
+    VC1_IRQHandler                           0x00003605   Thumb Code     8  interrupts_hc32l021.o(.text.VC1_IRQHandler)
+    Vc0_IRQHandler                           0x0000360d   Thumb Code     2  interrupts_hc32l021.o(.text.Vc0_IRQHandler)
+    Vc1_IRQHandler                           0x0000360f   Thumb Code     2  interrupts_hc32l021.o(.text.Vc1_IRQHandler)
+    $Super$$main                             0x00003611   Thumb Code   444  main.o(.text.main)
+    __ARM_clz                                0x000037cd   Thumb Code    46  depilogue.o(i.__ARM_clz)
+    __scatterload_copy                       0x000037fb   Thumb Code    14  handlers.o(i.__scatterload_copy)
+    __scatterload_null                       0x00003809   Thumb Code     2  handlers.o(i.__scatterload_null)
+    __scatterload_zeroinit                   0x0000380b   Thumb Code    14  handlers.o(i.__scatterload_zeroinit)
+    Region$$Table$$Base                      0x00003854   Number         0  anon$$obj.o(Region$$Table)
+    Region$$Table$$Limit                     0x00003874   Number         0  anon$$obj.o(Region$$Table)
+    SystemCoreClock                          0x20000000   Data           4  system_hc32l021.o(.data.SystemCoreClock)
+    __initial_sp                             0x20000840   Data           0  startup_hc32l021.o(STACK)
+
+
+
+==============================================================================
+
+Memory Map of the image
+
+  Image Entry point : 0x000020c1
+
+  Load Region LR_IROM1 (Base: 0x00002000, Size: 0x00001880, Max: 0x0000de00, ABSOLUTE)
+
+    Execution Region ER_IROM1 (Exec base: 0x00002000, Load base: 0x00002000, Size: 0x00001874, Max: 0x0000de00, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x00002000   0x00002000   0x000000c0   Data   RO           20    RESET               startup_hc32l021.o
+    0x000020c0   0x000020c0   0x00000000   Code   RO          543  * .ARM.Collect$$$$00000000  mc_p.l(entry.o)
+    0x000020c0   0x000020c0   0x00000004   Code   RO          568    .ARM.Collect$$$$00000001  mc_p.l(entry2.o)
+    0x000020c4   0x000020c4   0x00000004   Code   RO          571    .ARM.Collect$$$$00000004  mc_p.l(entry5.o)
+    0x000020c8   0x000020c8   0x00000000   Code   RO          573    .ARM.Collect$$$$00000008  mc_p.l(entry7b.o)
+    0x000020c8   0x000020c8   0x00000000   Code   RO          575    .ARM.Collect$$$$0000000A  mc_p.l(entry8b.o)
+    0x000020c8   0x000020c8   0x00000008   Code   RO          576    .ARM.Collect$$$$0000000B  mc_p.l(entry9a.o)
+    0x000020d0   0x000020d0   0x00000000   Code   RO          578    .ARM.Collect$$$$0000000D  mc_p.l(entry10a.o)
+    0x000020d0   0x000020d0   0x00000000   Code   RO          580    .ARM.Collect$$$$0000000F  mc_p.l(entry11a.o)
+    0x000020d0   0x000020d0   0x00000004   Code   RO          569    .ARM.Collect$$$$00002712  mc_p.l(entry2.o)
+    0x000020d4   0x000020d4   0x0000003c   Code   RO           21    .text               startup_hc32l021.o
+    0x00002110   0x00002110   0x0000002c   Code   RO          546    .text               mc_p.l(uidiv.o)
+    0x0000213c   0x0000213c   0x00000024   Code   RO          548    .text               mc_p.l(memcpya.o)
+    0x00002160   0x00002160   0x00000024   Code   RO          550    .text               mc_p.l(memseta.o)
+    0x00002184   0x00002184   0x000000b2   Code   RO          554    .text               mf_p.l(fadd.o)
+    0x00002236   0x00002236   0x0000007c   Code   RO          556    .text               mf_p.l(fdiv.o)
+    0x000022b2   0x000022b2   0x00000002   PAD
+    0x000022b4   0x000022b4   0x000000d0   Code   RO          558    .text               mf_p.l(dmul.o)
+    0x00002384   0x00002384   0x0000000e   Code   RO          560    .text               mf_p.l(ffltui.o)
+    0x00002392   0x00002392   0x00000002   PAD
+    0x00002394   0x00002394   0x0000001c   Code   RO          562    .text               mf_p.l(dfltui.o)
+    0x000023b0   0x000023b0   0x00000028   Code   RO          564    .text               mf_p.l(ffixui.o)
+    0x000023d8   0x000023d8   0x0000003c   Code   RO          566    .text               mf_p.l(dfixui.o)
+    0x00002414   0x00002414   0x00000022   Code   RO          582    .text               mc_p.l(llushr.o)
+    0x00002436   0x00002436   0x00000000   Code   RO          584    .text               mc_p.l(iusefp.o)
+    0x00002436   0x00002436   0x00000082   Code   RO          585    .text               mf_p.l(fepilogue.o)
+    0x000024b8   0x000024b8   0x000000be   Code   RO          587    .text               mf_p.l(depilogue.o)
+    0x00002576   0x00002576   0x00000002   PAD
+    0x00002578   0x00002578   0x00000024   Code   RO          591    .text               mc_p.l(init.o)
+    0x0000259c   0x0000259c   0x00000020   Code   RO          593    .text               mc_p.l(llshl.o)
+    0x000025bc   0x000025bc   0x0000000e   Code   RO            6    .text.$Sub$$main    system_hc32l021.o
+    0x000025ca   0x000025ca   0x00000008   Code   RO          115    .text.ADC_IRQHandler  interrupts_hc32l021.o
+    0x000025d2   0x000025d2   0x00000002   PAD
+    0x000025d4   0x000025d4   0x00000064   Code   RO          190    .text.APP_BuildResponse  i2c_iap_app.o
+    0x00002638   0x00002638   0x00000028   Code   RO          165    .text.APP_DebugLog  main.o
+    0x00002660   0x00002660   0x00000008   Code   RO           97    .text.ATIM3_IRQHandler  interrupts_hc32l021.o
+    0x00002668   0x00002668   0x00000002   Code   RO           77    .text.Adc_IRQHandler  interrupts_hc32l021.o
+    0x0000266a   0x0000266a   0x00000002   Code   RO           59    .text.Atim3_IRQHandler  interrupts_hc32l021.o
+    0x0000266c   0x0000266c   0x00000004   Code   RO          300    .text.BTIM_CounterSet  btim.o
+    0x00002670   0x00002670   0x0000000a   Code   RO          308    .text.BTIM_Disable  btim.o
+    0x0000267a   0x0000267a   0x0000000a   Code   RO          306    .text.BTIM_Enable   btim.o
+    0x00002684   0x00002684   0x00000048   Code   RO          298    .text.BTIM_Init     btim.o
+    0x000026cc   0x000026cc   0x00000008   Code   RO          324    .text.BTIM_IntEnable  btim.o
+    0x000026d4   0x000026d4   0x00000008   Code   RO          330    .text.BTIM_IntFlagClear  btim.o
+    0x000026dc   0x000026dc   0x0000000e   Code   RO          328    .text.BTIM_IntFlagGet  btim.o
+    0x000026ea   0x000026ea   0x00000002   PAD
+    0x000026ec   0x000026ec   0x00000014   Code   RO          336    .text.BTIM_StcInit  btim.o
+    0x00002700   0x00002700   0x0000000e   Code   RO          138    .text.BootParam_CalcHeaderCrc  boot_param.o
+    0x0000270e   0x0000270e   0x00000014   Code   RO          142    .text.BootParam_Read  boot_param.o
+    0x00002722   0x00002722   0x00000002   PAD
+    0x00002724   0x00002724   0x0000004c   Code   RO          146    .text.BootParam_WriteState  boot_param.o
+    0x00002770   0x00002770   0x00000070   Code   RO           36    .text.Btim0Config   board_stkhc32l021.o
+    0x000027e0   0x000027e0   0x00000074   Code   RO           38    .text.Btim1Config   board_stkhc32l021.o
+    0x00002854   0x00002854   0x00000008   Code   RO          105    .text.CTIM0_IRQHandler  interrupts_hc32l021.o
+    0x0000285c   0x0000285c   0x00000008   Code   RO          107    .text.CTIM1_IRQHandler  interrupts_hc32l021.o
+    0x00002864   0x00002864   0x00000008   Code   RO          125    .text.CTRIM_CLKDET_IRQHandler  interrupts_hc32l021.o
+    0x0000286c   0x0000286c   0x0000007c   Code   RO          167    .text.Ctim0_IRQHandler  main.o
+    0x000028e8   0x000028e8   0x00000002   Code   RO           69    .text.Ctim1_IRQHandler  interrupts_hc32l021.o
+    0x000028ea   0x000028ea   0x00000002   Code   RO           87    .text.Ctrim_Clkdet_IRQHandler  interrupts_hc32l021.o
+    0x000028ec   0x000028ec   0x00000040   Code   RO          353    .text.DDL_Delay1ms  ddl.o
+    0x0000292c   0x0000292c   0x00000014   Code   RO          351    .text.DDL_MemoryClear  ddl.o
+    0x00002940   0x00002940   0x00000088   Code   RO           51    .text.EnableNvic    interrupts_hc32l021.o
+    0x000029c8   0x000029c8   0x00000008   Code   RO          123    .text.FLASH_IRQHandler  interrupts_hc32l021.o
+    0x000029d0   0x000029d0   0x00000002   Code   RO           85    .text.Flash_IRQHandler  interrupts_hc32l021.o
+    0x000029d2   0x000029d2   0x00000002   PAD
+    0x000029d4   0x000029d4   0x00000148   Code   RO          279    .text.GPIO_Init     gpio.o
+    0x00002b1c   0x00002b1c   0x0000000c   Code   RO          283    .text.GPIO_IntFlagClear  gpio.o
+    0x00002b28   0x00002b28   0x00000012   Code   RO          281    .text.GPIO_IntFlagGet  gpio.o
+    0x00002b3a   0x00002b3a   0x00000010   Code   RO          285    .text.GPIO_StcInit  gpio.o
+    0x00002b4a   0x00002b4a   0x00000002   PAD
+    0x00002b4c   0x00002b4c   0x00000058   Code   RO          140    .text.HC32_CalCrc16  boot_param.o
+    0x00002ba4   0x00002ba4   0x000000c0   Code   RO          148    .text.HC32_FlashEraseSector  boot_param.o
+    0x00002c64   0x00002c64   0x00000114   Code   RO          150    .text.HC32_FlashWriteBytes  boot_param.o
+    0x00002d78   0x00002d78   0x00000008   Code   RO          109    .text.HSI2C_IRQHandler  interrupts_hc32l021.o
+    0x00002d80   0x00002d80   0x0000000c   Code   RO          438    .text.HSI2C_SlaveFlagClear  hsi2c.o
+    0x00002d8c   0x00002d8c   0x00000064   Code   RO          420    .text.HSI2C_SlaveInit  hsi2c.o
+    0x00002df0   0x00002df0   0x0000000c   Code   RO          440    .text.HSI2C_SlaveIntEnable  hsi2c.o
+    0x00002dfc   0x00002dfc   0x00000014   Code   RO          458    .text.HSI2C_SlaveReadData  hsi2c.o
+    0x00002e10   0x00002e10   0x00000044   Code   RO          426    .text.HSI2C_SlaveScr2Config  hsi2c.o
+    0x00002e54   0x00002e54   0x0000001a   Code   RO          474    .text.HSI2C_SlaveStcInit  hsi2c.o
+    0x00002e6e   0x00002e6e   0x00000008   Code   RO          446    .text.HSI2C_SlaveWriteData  hsi2c.o
+    0x00002e76   0x00002e76   0x00000010   Code   RO           89    .text.HardFault_Handler  interrupts_hc32l021.o
+    0x00002e86   0x00002e86   0x00000002   PAD
+    0x00002e88   0x00002e88   0x00000178   Code   RO          184    .text.Hsi2c_IRQHandler  i2c_iap_app.o
+    0x00003000   0x00003000   0x000000d0   Code   RO          186    .text.IAP_APP_Init  i2c_iap_app.o
+    0x000030d0   0x000030d0   0x0000018c   Code   RO          188    .text.IAP_APP_Task  i2c_iap_app.o
+    0x0000325c   0x0000325c   0x00000008   Code   RO          111    .text.IWDT_IRQHandler  interrupts_hc32l021.o
+    0x00003264   0x00003264   0x00000002   Code   RO           73    .text.Iwdt_IRQHandler  interrupts_hc32l021.o
+    0x00003266   0x00003266   0x00000008   Code   RO           99    .text.LPUART0_IRQHandler  interrupts_hc32l021.o
+    0x0000326e   0x0000326e   0x00000008   Code   RO          101    .text.LPUART1_IRQHandler  interrupts_hc32l021.o
+    0x00003276   0x00003276   0x00000008   Code   RO          499    .text.LPUART_FuncEnable  lpuart.o
+    0x0000327e   0x0000327e   0x00000002   PAD
+    0x00003280   0x00003280   0x000000e0   Code   RO          489    .text.LPUART_Init   lpuart.o
+    0x00003360   0x00003360   0x0000002c   Code   RO          531    .text.LPUART_StcInit  lpuart.o
+    0x0000338c   0x0000338c   0x00000008   Code   RO          121    .text.LVD_IRQHandler  interrupts_hc32l021.o
+    0x00003394   0x00003394   0x00000002   Code   RO           61    .text.LpUart0_IRQHandler  interrupts_hc32l021.o
+    0x00003396   0x00003396   0x00000002   Code   RO           63    .text.LpUart1_IRQHandler  interrupts_hc32l021.o
+    0x00003398   0x00003398   0x00000002   Code   RO           83    .text.Lvd_IRQHandler  interrupts_hc32l021.o
+    0x0000339a   0x0000339a   0x00000008   Code   RO           93    .text.PORTA_IRQHandler  interrupts_hc32l021.o
+    0x000033a2   0x000033a2   0x00000008   Code   RO           95    .text.PORTB_IRQHandler  interrupts_hc32l021.o
+    0x000033aa   0x000033aa   0x00000002   PAD
+    0x000033ac   0x000033ac   0x00000030   Code   RO          169    .text.PortA_IRQHandler  main.o
+    0x000033dc   0x000033dc   0x00000002   Code   RO           57    .text.PortB_IRQHandler  interrupts_hc32l021.o
+    0x000033de   0x000033de   0x00000008   Code   RO          113    .text.RTC_IRQHandler  interrupts_hc32l021.o
+    0x000033e6   0x000033e6   0x00000002   Code   RO           75    .text.Rtc_IRQHandler  interrupts_hc32l021.o
+    0x000033e8   0x000033e8   0x00000008   Code   RO          103    .text.SPI_IRQHandler  interrupts_hc32l021.o
+    0x000033f0   0x000033f0   0x00000038   Code   RO           30    .text.STK_AIMConfig  board_stkhc32l021.o
+    0x00003428   0x00003428   0x00000048   Code   RO           28    .text.STK_EvsyncConfig  board_stkhc32l021.o
+    0x00003470   0x00003470   0x00000034   Code   RO           32    .text.STK_LEDConfig  board_stkhc32l021.o
+    0x000034a4   0x000034a4   0x00000018   Code   RO          246    .text.SYSCTRL_FuncEnable  sysctrl.o
+    0x000034bc   0x000034bc   0x00000068   Code   RO          216    .text.SYSCTRL_HclkFreqGet  sysctrl.o
+    0x00003524   0x00003524   0x00000028   Code   RO          240    .text.SYSCTRL_PeriphClockEnable  sysctrl.o
+    0x0000354c   0x0000354c   0x0000003c   Code   RO          254    .text.SYSCTRL_PeriphReset  sysctrl.o
+    0x00003588   0x00003588   0x00000002   Code   RO           65    .text.Spi_IRQHandler  interrupts_hc32l021.o
+    0x0000358a   0x0000358a   0x00000008   Code   RO           91    .text.SysTick_Handler  interrupts_hc32l021.o
+    0x00003592   0x00003592   0x00000002   Code   RO           53    .text.SysTick_IRQHandler  interrupts_hc32l021.o
+    0x00003594   0x00003594   0x00000010   Code   RO            2    .text.SystemCoreClockUpdate  system_hc32l021.o
+    0x000035a4   0x000035a4   0x00000058   Code   RO            4    .text.SystemInit    system_hc32l021.o
+    0x000035fc   0x000035fc   0x00000008   Code   RO          117    .text.VC0_IRQHandler  interrupts_hc32l021.o
+    0x00003604   0x00003604   0x00000008   Code   RO          119    .text.VC1_IRQHandler  interrupts_hc32l021.o
+    0x0000360c   0x0000360c   0x00000002   Code   RO           79    .text.Vc0_IRQHandler  interrupts_hc32l021.o
+    0x0000360e   0x0000360e   0x00000002   Code   RO           81    .text.Vc1_IRQHandler  interrupts_hc32l021.o
+    0x00003610   0x00003610   0x000001bc   Code   RO          163    .text.main          main.o
+    0x000037cc   0x000037cc   0x0000002e   Code   RO          589    i.__ARM_clz         mf_p.l(depilogue.o)
+    0x000037fa   0x000037fa   0x0000000e   Code   RO          597    i.__scatterload_copy  mc_p.l(handlers.o)
+    0x00003808   0x00003808   0x00000002   Code   RO          598    i.__scatterload_null  mc_p.l(handlers.o)
+    0x0000380a   0x0000380a   0x0000000e   Code   RO          599    i.__scatterload_zeroinit  mc_p.l(handlers.o)
+    0x00003818   0x00003818   0x0000003a   Data   RO          171    .rodata.str1.1      main.o
+    0x00003852   0x00003852   0x00000002   PAD
+    0x00003854   0x00003854   0x00000020   Data   RO          595    Region$$Table       anon$$obj.o
+
+
+    Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x00003878, Size: 0x00000840, Max: 0x00001800, ABSOLUTE)
+
+    Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
+
+    0x20000000   0x00003878   0x00000004   Data   RW            8    .data.SystemCoreClock  system_hc32l021.o
+    0x20000004   0x0000387c   0x00000004   PAD
+    0x20000008        -       0x00000010   Zero   RW          194    .bss..L_MergedGlobals  i2c_iap_app.o
+    0x20000018        -       0x00000212   Zero   RW          192    .bss.s_au8RxMailbox  i2c_iap_app.o
+    0x2000022a   0x0000387c   0x00000002   PAD
+    0x2000022c        -       0x00000212   Zero   RW          193    .bss.s_au8TxMailbox  i2c_iap_app.o
+    0x2000043e   0x0000387c   0x00000002   PAD
+    0x20000440        -       0x00000400   Zero   RW           18    STACK               startup_hc32l021.o
+
+
+==============================================================================
+
+Image component sizes
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Object Name
+
+       408         12          0          0          0      15675   board_stkhc32l021.o
+       666         36          0          0          0       5855   boot_param.o
+       146         16          0          0          0       6430   btim.o
+        84          8          0          0          0       2553   ddl.o
+       374          4          0          0          0      11817   gpio.o
+       246         16          0          0          0      26911   hsi2c.o
+      1080         72          0          0       1076      23679   i2c_iap_app.o
+       326         16          0          0          0       7162   interrupts_hc32l021.o
+       276         20          0          0          0       8869   lpuart.o
+       656        188         58          0          0      17905   main.o
+        60         22        192          0       1024        600   startup_hc32l021.o
+       228         36          0          0          0      24271   sysctrl.o
+       118         36          0          4          0       7196   system_hc32l021.o
+
+    ----------------------------------------------------------------------
+      4684        482        284          4       2108     158923   Object Totals
+         0          0         32          0          0          0   (incl. Generated)
+        16          0          2          0          8          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Member Name
+
+         0          0          0          0          0          0   entry.o
+         0          0          0          0          0          0   entry10a.o
+         0          0          0          0          0          0   entry11a.o
+         8          4          0          0          0          0   entry2.o
+         4          0          0          0          0          0   entry5.o
+         0          0          0          0          0          0   entry7b.o
+         0          0          0          0          0          0   entry8b.o
+         8          4          0          0          0          0   entry9a.o
+        30          0          0          0          0          0   handlers.o
+        36          8          0          0          0         68   init.o
+         0          0          0          0          0          0   iusefp.o
+        32          0          0          0          0         68   llshl.o
+        34          0          0          0          0         68   llushr.o
+        36          0          0          0          0         60   memcpya.o
+        36          0          0          0          0        100   memseta.o
+        44          0          0          0          0         72   uidiv.o
+       236          0          0          0          0        216   depilogue.o
+        60         10          0          0          0         68   dfixui.o
+        28          4          0          0          0         68   dfltui.o
+       208          6          0          0          0         88   dmul.o
+       178          0          0          0          0        108   fadd.o
+       124          0          0          0          0         72   fdiv.o
+       130          0          0          0          0        144   fepilogue.o
+        40          0          0          0          0         60   ffixui.o
+        14          0          0          0          0         68   ffltui.o
+
+    ----------------------------------------------------------------------
+      1292         36          0          0          0       1328   Library Totals
+         6          0          0          0          0          0   (incl. Padding)
+
+    ----------------------------------------------------------------------
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   Library Name
+
+       268         16          0          0          0        436   mc_p.l
+      1018         20          0          0          0        892   mf_p.l
+
+    ----------------------------------------------------------------------
+      1292         36          0          0          0       1328   Library Totals
+
+    ----------------------------------------------------------------------
+
+==============================================================================
+
+
+      Code (inc. data)   RO Data    RW Data    ZI Data      Debug   
+
+      5976        518        284          4       2108     159655   Grand Totals
+      5976        518        284          4       2108     159655   ELF Image Totals
+      5976        518        284          4          0          0   ROM Totals
+
+==============================================================================
+
+    Total RO  Size (Code + RO Data)                 6260 (   6.11kB)
+    Total RW  Size (RW Data + ZI Data)              2112 (   2.06kB)
+    Total ROM Size (Code + RO Data + RW Data)       6264 (   6.12kB)
+
+==============================================================================
+

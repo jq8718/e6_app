@@ -1,0 +1,18 @@
+--cpu Cortex-M0+
+".\output\release\system_hc32l021.o"
+".\output\release\startup_hc32l021.o"
+".\output\release\board_stkhc32l021.o"
+".\output\release\interrupts_hc32l021.o"
+".\output\release\boot_param.o"
+".\output\release\main.o"
+".\output\release\i2c_iap_app.o"
+".\output\release\sysctrl.o"
+".\output\release\gpio.o"
+".\output\release\btim.o"
+".\output\release\ddl.o"
+".\output\release\hsi2c.o"
+".\output\release\lpuart.o"
+--library_type=microlib --strict --scatter ".\output\release\HC32L021.sct"
+--keep=*Handler --summary_stderr --info summarysizes --map --load_addr_map_info --xref --callgraph --symbols
+--info sizes --info totals --info unused --info veneers
+--list ".\output\release\HC32L021.map" -o .\output\release\HC32L021.axf
