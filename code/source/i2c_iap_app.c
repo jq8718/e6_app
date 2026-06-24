@@ -14,6 +14,7 @@
 #include "gpio.h"
 #include "sysctrl.h"
 #include "hc32l021.h"
+#include "board_stkhc32l021.h"
 
 /*******************************************************************************
  * Local type definitions ('typedef')
@@ -38,9 +39,10 @@ static stc_cmd_result_t CmdJumpToBoot(void);
 /*******************************************************************************
  * Local variable definitions ('static')
  ******************************************************************************/
-/* Virtual registers */
-static volatile uint8_t  s_u8RegStatus;
-static volatile uint8_t  s_u8RegError;
+/* Virtual registers — register file 0x00~0x1F */
+static volatile uint8_t  s_au8RegFile[0x20];
+
+/* TX_LEN 16-bit value (split into s_au8RegFile[REG_TX_LEN/LEN_HIGH] for read) */
 static volatile uint16_t s_u16RegTxLen;
 
 /* MAILBOX buffers */
@@ -52,11 +54,22 @@ static volatile uint16_t s_u16SubAddr;
 static volatile uint16_t s_u16RxIdx;
 static volatile uint16_t s_u16TxIdx;
 static volatile boolean_t s_bSubAddrValid;
-static volatile uint8_t  s_u8TxLenByteIdx;
 
 /* Control flags */
 static volatile boolean_t s_bCtrlCommit;
+static volatile boolean_t s_bCtrlClear;
+static volatile boolean_t s_bCtrlAbort;
 static volatile boolean_t s_bJumpPending;
+
+/* SUM8 trigger flags */
+static volatile boolean_t s_bSum8Light;
+static volatile boolean_t s_bSum8Sensor;
+
+/* External references — application parameters updated on SUM8 match */
+extern uint16_t aim_delay_on;
+extern uint16_t aim_duration_on;
+extern uint16_t fill_delay_on;
+extern uint16_t fill_duration_on;
 
 /* Received frame byte count */
 static volatile uint16_t s_u16RxFrameLen;
@@ -82,7 +95,6 @@ void Hsi2c_IRQHandler(void)
                 /* First byte after address match = sub-address */
                 s_u16SubAddr    = u8Data;
                 s_bSubAddrValid = TRUE;
-
                 if ((s_u16SubAddr >= REG_MAILBOX_START) && (s_u16SubAddr <= REG_MAILBOX_END))
                 {
                     s_u16RxIdx = (uint16_t)(s_u16SubAddr - REG_MAILBOX_START);
@@ -91,49 +103,53 @@ void Hsi2c_IRQHandler(void)
             }
             else
             {
-                /* Sub-address already received — route data */
                 switch (s_u16SubAddr)
                 {
                     case REG_CTRL:
                         if (CTRL_COMMIT == u8Data)
                         {
-                            if (STATUS_IDLE == s_u8RegStatus)
+                            if (STATUS_IDLE == s_au8RegFile[REG_STATUS])
                             {
                                 s_bCtrlCommit = TRUE;
                             }
                         }
                         else if (CTRL_CLEAR == u8Data)
                         {
-                            if ((STATUS_RESP_READY == s_u8RegStatus) ||
-                                (STATUS_ERROR == s_u8RegStatus))
-                            {
-                                s_u8RegStatus = STATUS_IDLE;
-                                s_u8RegError  = ERROR_CODE_OK;
-                                s_u16RegTxLen = 0u;
-                            }
+                            s_bCtrlClear = TRUE;
                         }
                         else if (CTRL_ABORT == u8Data)
                         {
-                            s_u8RegStatus = STATUS_IDLE;
-                            s_u8RegError  = ERROR_CODE_OK;
-                            s_u16RegTxLen = 0u;
-                            s_bJumpPending = FALSE;
+                            s_bCtrlAbort = TRUE;
                         }
+                        s_u16SubAddr++;
                         break;
 
                     default:
-                        if ((s_u16SubAddr >= REG_MAILBOX_START) &&
-                            (s_u16SubAddr <= REG_MAILBOX_END))
+                        if ((s_u16SubAddr >= REG_MAILBOX_START) && (s_u16SubAddr <= REG_MAILBOX_END))
                         {
-                            if (STATUS_IDLE == s_u8RegStatus)
+                            if (STATUS_IDLE == s_au8RegFile[REG_STATUS])
                             {
                                 if (s_u16RxIdx < IAP_MAILBOX_SIZE)
                                 {
                                     s_au8RxMailbox[s_u16RxIdx++] = u8Data;
                                 }
                             }
-                            s_u16SubAddr++;
                         }
+                        else if (s_u16SubAddr < REG_MAILBOX_START)
+                        {
+                            /* APP-specific registers 0x03~0x1F: store to register file */
+                            s_au8RegFile[s_u16SubAddr] = u8Data;
+                            /* SUM8 trigger: set flag for main-loop processing */
+                            if (REG_SUM8_LIGHT == s_u16SubAddr)
+                            {
+                                s_bSum8Light = TRUE;
+                            }
+                            else if (REG_SUM8_SENSOR == s_u16SubAddr)
+                            {
+                                s_bSum8Sensor = TRUE;
+                            }
+                        }
+                        s_u16SubAddr++;
                         break;
                 }
             }
@@ -145,43 +161,22 @@ void Hsi2c_IRQHandler(void)
     {
         uint8_t u8TxData = 0x00u;
 
-        switch (s_u16SubAddr)
+        if (s_u16SubAddr >= REG_MAILBOX_START)
         {
-            case REG_STATUS:
-                u8TxData = s_u8RegStatus;
-                break;
-
-            case REG_ERROR:
-                u8TxData = s_u8RegError;
-                break;
-
-            case REG_TX_LEN:
-                if (STATUS_RESP_READY == s_u8RegStatus)
-                {
-                    if (0u == s_u8TxLenByteIdx)
-                    {
-                        u8TxData = (uint8_t)s_u16RegTxLen;
-                        s_u8TxLenByteIdx = 1u;
-                    }
-                    else
-                    {
-                        u8TxData = (uint8_t)(s_u16RegTxLen >> 8);
-                    }
-                }
-                break;
-
-            default:
-                if ((s_u16SubAddr >= REG_MAILBOX_START) &&
-                    (s_u16SubAddr <= REG_MAILBOX_END))
-                {
-                    if (s_u16TxIdx < s_u16RegTxLen)
-                    {
-                        u8TxData = s_au8TxMailbox[s_u16TxIdx++];
-                    }
-                    s_u16SubAddr++;
-                }
-                break;
+            /* MAILBOX: read from TX buffer */
+            if (s_u16TxIdx < s_u16RegTxLen)
+            {
+                u8TxData = s_au8TxMailbox[s_u16TxIdx++];
+            }
         }
+        else
+        {
+            /* Register file 0x00~0x1F: direct lookup */
+            u8TxData = s_au8RegFile[s_u16SubAddr];
+        }
+
+        /* Auto-increment for sequential read */
+        s_u16SubAddr++;
 
         HSI2C_SlaveWriteData(HSI2C, u8TxData);
     }
@@ -192,13 +187,12 @@ void Hsi2c_IRQHandler(void)
         if (u32Flags & HSI2C_SLAVE_FLAG_SDF)
         {
             /* STOP: save received frame length for COMMIT */
-            if ((s_u16SubAddr >= REG_MAILBOX_START) &&
-                (s_u16SubAddr <= REG_MAILBOX_END))
+            if ((s_u16SubAddr >= (REG_MAILBOX_START + 1u)) &&
+                (s_u16SubAddr <= (REG_MAILBOX_END + 1u)))
             {
                 s_u16RxFrameLen = s_u16RxIdx;
             }
-            s_bSubAddrValid  = FALSE;
-            s_u8TxLenByteIdx = 0u;
+            s_bSubAddrValid = FALSE;
         }
         HSI2C->STAR = 0u;
     }
@@ -221,8 +215,8 @@ void Hsi2c_IRQHandler(void)
  ******************************************************************************/
 static void APP_SetError(uint8_t u8ErrCode)
 {
-    s_u8RegStatus = STATUS_ERROR;
-    s_u8RegError  = u8ErrCode;
+    s_au8RegFile[REG_STATUS] = STATUS_ERROR;
+    s_au8RegFile[REG_ERROR]  = u8ErrCode;
 }
 
 /*******************************************************************************
@@ -257,6 +251,8 @@ static void APP_BuildResponse(uint8_t u8Cmd, uint8_t u8Seq, uint8_t u8ErrCode,
     s_au8TxMailbox[u16CrcOffset + 1u]  = (uint8_t)(u16Crc >> 8);
 
     s_u16RegTxLen  = u16CrcOffset + IAP_CRC_SIZE;
+    s_au8RegFile[REG_TX_LEN]      = (uint8_t)s_u16RegTxLen;
+    s_au8RegFile[REG_TX_LEN_HIGH] = (uint8_t)(s_u16RegTxLen >> 8);
     s_u16TxIdx     = 0u;
 }
 
@@ -324,8 +320,8 @@ static void APP_ParseAndExecute(void)
     }
 
     /* Frame valid — execute command */
-    s_u8RegStatus = STATUS_BUSY;
-    s_u8RegError  = ERROR_CODE_OK;
+    s_au8RegFile[REG_STATUS] = STATUS_BUSY;
+    s_au8RegFile[REG_ERROR]  = ERROR_CODE_OK;
 
     u8Cmd = s_au8RxMailbox[HDR_OFFSET_CMD];
     u8Seq = s_au8RxMailbox[HDR_OFFSET_SEQ];
@@ -349,12 +345,12 @@ static void APP_ParseAndExecute(void)
 
     if (ERROR_CODE_OK == stcResult.u8ErrCode)
     {
-        s_u8RegStatus = STATUS_RESP_READY;
+        s_au8RegFile[REG_STATUS] = STATUS_RESP_READY;
     }
     else
     {
-        s_u8RegStatus = STATUS_ERROR;
-        s_u8RegError  = stcResult.u8ErrCode;
+        s_au8RegFile[REG_STATUS] = STATUS_ERROR;
+        s_au8RegFile[REG_ERROR]  = stcResult.u8ErrCode;
     }
 }
 
@@ -433,18 +429,34 @@ static void APP_I2cInit(void)
  ******************************************************************************/
 void IAP_APP_Init(void)
 {
-    /* Clear all state */
-    s_u8RegStatus     = STATUS_IDLE;
-    s_u8RegError      = ERROR_CODE_OK;
-    s_u16RegTxLen     = 0u;
+    /* Clear register file */
+    (void)memset((void *)s_au8RegFile, 0, sizeof(s_au8RegFile));
+    s_au8RegFile[REG_STATUS]          = STATUS_IDLE;
+    s_au8RegFile[REG_ERROR]           = ERROR_CODE_OK;
+    s_au8RegFile[REG_FW_VERSION_LOW]  = (uint8_t)APP_FW_VERSION;
+    s_au8RegFile[REG_FW_VERSION_HIGH] = (uint8_t)(APP_FW_VERSION >> 8);
+
+    /* Sync default values to register file (I2C readable) */
+    s_au8RegFile[REG_AIM_DELAY_LOW]     = (uint8_t)(aim_delay_on);
+    s_au8RegFile[REG_AIM_DELAY_HIGH]    = (uint8_t)(aim_delay_on >> 8);
+    s_au8RegFile[REG_AIM_DURATION_LOW]  = (uint8_t)(aim_duration_on);
+    s_au8RegFile[REG_AIM_DURATION_HIGH] = (uint8_t)(aim_duration_on >> 8);
+    s_au8RegFile[REG_FILL_DELAY_LOW]    = (uint8_t)(fill_delay_on);
+    s_au8RegFile[REG_FILL_DELAY_HIGH]   = (uint8_t)(fill_delay_on >> 8);
+    s_au8RegFile[REG_FILL_DURATION_LOW]  = (uint8_t)(fill_duration_on);
+    s_au8RegFile[REG_FILL_DURATION_HIGH] = (uint8_t)(fill_duration_on >> 8);
+    s_u16RegTxLen                     = 0u;
     s_u16RxIdx        = 0u;
     s_u16TxIdx        = 0u;
     s_u16SubAddr      = 0u;
     s_u16RxFrameLen   = 0u;
     s_bSubAddrValid   = FALSE;
-    s_u8TxLenByteIdx  = 0u;
     s_bCtrlCommit     = FALSE;
+    s_bCtrlClear      = FALSE;
+    s_bCtrlAbort      = FALSE;
     s_bJumpPending    = FALSE;
+    s_bSum8Light      = FALSE;
+    s_bSum8Sensor     = FALSE;
 
     (void)memset(s_au8RxMailbox, 0, sizeof(s_au8RxMailbox));
     (void)memset(s_au8TxMailbox, 0, sizeof(s_au8TxMailbox));
@@ -460,7 +472,7 @@ void IAP_APP_Task(void)
     {
         s_bCtrlCommit = FALSE;
 
-        if (STATUS_IDLE != s_u8RegStatus)
+        if (STATUS_IDLE != s_au8RegFile[REG_STATUS])
         {
             return;
         }
@@ -468,8 +480,35 @@ void IAP_APP_Task(void)
         APP_ParseAndExecute();
     }
 
+    /* Handle CLEAR */
+    if (s_bCtrlClear)
+    {
+        s_bCtrlClear = FALSE;
+        if ((STATUS_RESP_READY == s_au8RegFile[REG_STATUS]) ||
+            (STATUS_ERROR == s_au8RegFile[REG_STATUS]))
+        {
+            s_au8RegFile[REG_STATUS] = STATUS_IDLE;
+            s_au8RegFile[REG_ERROR]  = ERROR_CODE_OK;
+            s_u16RegTxLen = 0u;
+            s_au8RegFile[REG_TX_LEN]      = 0u;
+            s_au8RegFile[REG_TX_LEN_HIGH] = 0u;
+        }
+    }
+
+    /* Handle ABORT */
+    if (s_bCtrlAbort)
+    {
+        s_bCtrlAbort = FALSE;
+        s_au8RegFile[REG_STATUS] = STATUS_IDLE;
+        s_au8RegFile[REG_ERROR]  = ERROR_CODE_OK;
+        s_u16RegTxLen = 0u;
+        s_au8RegFile[REG_TX_LEN]      = 0u;
+        s_au8RegFile[REG_TX_LEN_HIGH] = 0u;
+        s_bJumpPending = FALSE;
+    }
+
     /* Handle JUMP request (after host CLEAR) */
-    if (s_bJumpPending && (STATUS_IDLE == s_u8RegStatus))
+    if (s_bJumpPending && (STATUS_IDLE == s_au8RegFile[REG_STATUS]))
     {
         s_bJumpPending = FALSE;
 
@@ -478,5 +517,44 @@ void IAP_APP_Task(void)
         for (i = 0u; i < 48000u; i++) { ; }
 
         NVIC_SystemReset();
+    }
+
+    /* Handle SUM8_LIGHT trigger: sum of registers 0x10~0x17 */
+    if (s_bSum8Light)
+    {
+        s_bSum8Light = FALSE;
+        uint8_t u8Sum = 0u;
+        uint8_t u8Reg;
+        for (u8Reg = REG_AIM_DELAY_LOW; u8Reg <= REG_FILL_DURATION_HIGH; u8Reg++)
+        {
+            u8Sum += s_au8RegFile[u8Reg];
+        }
+        if (u8Sum == s_au8RegFile[REG_SUM8_LIGHT])
+        {
+            /* Update light timing parameters from register file (LOW/HIGH → uint16) */
+            aim_delay_on    = (uint16_t)(s_au8RegFile[REG_AIM_DELAY_LOW]) |
+                              ((uint16_t)(s_au8RegFile[REG_AIM_DELAY_HIGH]) << 8);
+            aim_duration_on = (uint16_t)(s_au8RegFile[REG_AIM_DURATION_LOW]) |
+                              ((uint16_t)(s_au8RegFile[REG_AIM_DURATION_HIGH]) << 8);
+            fill_delay_on   = (uint16_t)(s_au8RegFile[REG_FILL_DELAY_LOW]) |
+                              ((uint16_t)(s_au8RegFile[REG_FILL_DELAY_HIGH]) << 8);
+            fill_duration_on = (uint16_t)(s_au8RegFile[REG_FILL_DURATION_LOW]) |
+                               ((uint16_t)(s_au8RegFile[REG_FILL_DURATION_HIGH]) << 8);
+            /* Re-configure timers with new values (applied on next frame sync) */
+            Btim0Config(aim_delay_on);
+            Btim1Config(aim_duration_on);
+        }
+    }
+
+    /* Handle SUM8_SENSOR trigger: sum of registers 0x19~0x1B */
+    if (s_bSum8Sensor)
+    {
+        s_bSum8Sensor = FALSE;
+        uint8_t u8Sum = 0u;
+        uint8_t u8Reg;
+        for (u8Reg = REG_FRAME_RATE; u8Reg <= REG_EXPOSURE_HIGH; u8Reg++)
+        {
+            u8Sum += s_au8RegFile[u8Reg];
+        }
     }
 }

@@ -22,7 +22,7 @@ extern "C" {
  ******************************************************************************/
 
 /* I2C slave address */
-#define I2C_SLAVE_ADDR       (0x20u)
+#define I2C_SLAVE_ADDR       (0x32u)
 
 /*===================================================================
  *  Protocol Constants
@@ -50,14 +50,35 @@ extern "C" {
 #define HDR_OFFSET_PAYLOAD    (8u)
 
 /*===================================================================
- *  Virtual Register Addresses
+ *  Virtual Register Addresses — System (per protocol §2.0)
  *===================================================================*/
 #define REG_STATUS        (0x00u)
 #define REG_ERROR         (0x01u)
 #define REG_CTRL          (0x02u)
+#define REG_FW_VERSION_LOW  (0x04u)
+#define REG_FW_VERSION_HIGH (0x05u)
 #define REG_TX_LEN        (0x06u)
+#define REG_TX_LEN_HIGH   (0x07u)
 #define REG_MAILBOX_START (0x20u)
 #define REG_MAILBOX_END   (0x231u)
+
+/*===================================================================
+ *  Virtual Register Addresses — APP Specific
+ *  Boot/others read returns 0x00, writes ignored.
+ *===================================================================*/
+#define REG_AIM_DELAY_LOW     (0x10u)
+#define REG_AIM_DELAY_HIGH    (0x11u)
+#define REG_AIM_DURATION_LOW  (0x12u)
+#define REG_AIM_DURATION_HIGH (0x13u)
+#define REG_FILL_DELAY_LOW    (0x14u)
+#define REG_FILL_DELAY_HIGH   (0x15u)
+#define REG_FILL_DURATION_LOW (0x16u)
+#define REG_FILL_DURATION_HIGH (0x17u)
+#define REG_SUM8_LIGHT        (0x18u)
+#define REG_FRAME_RATE        (0x19u)
+#define REG_EXPOSURE_LOW      (0x1Au)
+#define REG_EXPOSURE_HIGH     (0x1Bu)
+#define REG_SUM8_SENSOR       (0x1Cu)
 
 /*===================================================================
  *  STATUS Values
@@ -96,6 +117,12 @@ extern "C" {
 #define CMD_JUMP_TO_BOOT (0x23u)    /* APP: jump to bootloader */
 #define CMD_ERASE_FLASH  (0x24u)
 #define CMD_CRC_FLASH    (0x25u)
+
+/*===================================================================
+ *  APP Firmware Version
+ *===================================================================*/
+#define APP_FW_VERSION        (0x0100u) /* APP MCU firmware version (v1.0) */
+#define FW_VERSION_APP_MASK   (0x0000u) /* APP identifier in REG_FW_VERSION_HIGH */
 
 /*******************************************************************************
  * Global function prototypes

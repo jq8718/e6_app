@@ -48,6 +48,13 @@ static void APP_DebugUartInit(void);
 static void APP_DebugLog(const char *pStr);
 static void APP_DebugLogHex32(uint32_t u32Val);
 
+uint16_t aim_delay_on=60;
+uint16_t aim_duration_on=70;
+
+uint16_t fill_delay_on=60;
+uint16_t fill_duration_on=70;
+
+
 /*******************************************************************************
  * Function implementation - global ('extern') and local ('static')
  ******************************************************************************/
@@ -93,8 +100,8 @@ int32_t main(void)
     STK_AIM_ON(); /* AIM点亮 */
     STK_LEDConfig(); /* AIM控制输出 初始化 */
     STK_LED_ON(); /* 补光开启 */
-    Btim0Config(60); /* BTIM0初始化  帧同步后延时 时长*/
-    Btim1Config(70); /* BTIM1初始化  瞄准灯亮的 时长*/
+    Btim0Config(aim_delay_on); /* BTIM0初始化  帧同步后延时 时长*/
+    Btim1Config(aim_duration_on); /* BTIM1初始化  瞄准灯亮的 时长*/
 
     /* APP 初始化完成，标记 IMAGE_VALID */
     if (u32BootState != BOOT_PARAM_STATE_IMAGE_VALID)
@@ -180,6 +187,7 @@ static void APP_DebugLogHex32(uint32_t u32Val)
  * @brief  BTIM0中断服务函数
  * @retval None
  */
+
 void Ctim0_IRQHandler(void)
 {
     static boolean_t bFlag = FALSE;
@@ -187,8 +195,9 @@ void Ctim0_IRQHandler(void)
     if (TRUE == BTIM_IntFlagGet(BTIM0, BTIM_FLAG_UI))
     {
         STK_AIM_ON(); /* AIM点亮 */
-        STK_LED_OFF(); /* 补光关闭 */
+       // STK_LED_OFF(); /* 补光关闭 */
         BTIM_CounterSet(BTIM1,0);
+				//Btim1Config(aim_duration_on); /* BTIM1初始化  瞄准灯亮的 时长*/
         BTIM_Enable(BTIM1);
 
         BTIM_Disable(BTIM0);
@@ -199,10 +208,10 @@ void Ctim0_IRQHandler(void)
  if (TRUE == BTIM_IntFlagGet(BTIM1, BTIM_FLAG_UI))
     {
         STK_AIM_OFF(); /* AIM关闭 */
-        STK_LED_ON(); /* 补光开启 */
+       // STK_LED_ON(); /* 补光开启 */
         BTIM_Disable(BTIM1);
         BTIM_CounterSet(BTIM1,0);
-        BTIM_IntFlagClear(BTIM1, BTIM_FLAG_UI); /* 清除BTIM0的溢出中断标志位 */
+        BTIM_IntFlagClear(BTIM1, BTIM_FLAG_UI); /* 清除BTIM1的溢出中断标志位 */
     }
 }
 
@@ -217,6 +226,7 @@ void PortA_IRQHandler(void)
     {
         GPIO_IntFlagClear(STK_EVSYNC_PORT, STK_EVSYNC_PIN); /* 清除中断标志位 */
         BTIM_CounterSet(BTIM0,0);
+				//Btim0Config(aim_delay_on); /* BTIM0初始化  帧同步后延时 时长*/
         BTIM_Enable(BTIM0); /* 启动BTIM0运行 */
     }
 }

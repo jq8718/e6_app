@@ -72,11 +72,9 @@ void        BootParam_Read(stc_boot_param_t *pstcParam);
 en_result_t BootParam_WriteState(uint32_t u32State);
 uint16_t    BootParam_CalcHeaderCrc(const stc_boot_param_t *pstcParam);
 
-/* Low-level Flash helpers */
-en_result_t HC32_FlashWriteBytes(uint32_t u32Addr, uint8_t *pu8Data, uint32_t u32Len);
+/* Public low-level helpers (read-only / CRC — no write/erase risk) */
 void        HC32_FlashReadBytes(uint32_t u32Addr, uint8_t *pu8ReadBuff, uint32_t u32ByteLength);
 uint32_t    HC32_CalCrc16(uint8_t *pu8Data, uint32_t u32Offset, uint32_t u32Size);
-en_result_t HC32_FlashEraseSector(uint32_t u32SectorAddr);
 
 #ifdef __cplusplus
 }

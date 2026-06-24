@@ -19,6 +19,10 @@
 #define BOOT_PARAM_PAYLOAD_SIZE (7u * sizeof(uint32_t)) /* 28 bytes */
 #define FLASH_TIMEOUT           (0xFFFFu)
 
+/* Range protection: only the parameter sector is writable */
+#define BOOT_PARAM_SECTOR_START  BOOT_PARAM_ADDR
+#define BOOT_PARAM_SECTOR_END    (BOOT_PARAM_ADDR + FLASH_SECTOR_SIZE - 1u)
+
 #define FLASH_BYPASS() \
     do { \
         FLASH->BYPASS = 0x5A5A; \
@@ -50,6 +54,10 @@ void BootParam_Read(stc_boot_param_t *pstcParam)
 {
     HC32_FlashReadBytes(BOOT_PARAM_ADDR, (uint8_t *)pstcParam, sizeof(stc_boot_param_t));
 }
+
+/* Forward declarations for static Flash helpers */
+static en_result_t HC32_FlashWriteBytes(uint32_t u32Addr, uint8_t *pu8Data, uint32_t u32Len);
+static en_result_t HC32_FlashEraseSector(uint32_t u32SectorAddr);
 
 en_result_t BootParam_WriteState(uint32_t u32State)
 {
@@ -105,10 +113,17 @@ uint32_t HC32_CalCrc16(uint8_t *pu8Data, uint32_t u32Offset, uint32_t u32Size)
 /*******************************************************************************
  * Flash helpers
  ******************************************************************************/
-en_result_t HC32_FlashWriteBytes(uint32_t u32Addr, uint8_t *pu8Data, uint32_t u32Len)
+static en_result_t HC32_FlashWriteBytes(uint32_t u32Addr, uint8_t *pu8Data, uint32_t u32Len)
 {
     volatile uint32_t u32Timeout = FLASH_TIMEOUT;
     uint32_t          u32Index   = 0u;
+
+    /* Range: only the parameter sector */
+    if ((u32Addr < BOOT_PARAM_SECTOR_START) ||
+        ((u32Addr + u32Len - 1u) > BOOT_PARAM_SECTOR_END))
+    {
+        return ErrorInvalidParameter;
+    }
 
     FLASH_BYPASS();
     FLASH->CR_f.RO = 0u;
@@ -191,9 +206,16 @@ void HC32_FlashReadBytes(uint32_t u32Addr, uint8_t *pu8ReadBuff, uint32_t u32Byt
     }
 }
 
-en_result_t HC32_FlashEraseSector(uint32_t u32SectorAddr)
+static en_result_t HC32_FlashEraseSector(uint32_t u32SectorAddr)
 {
     volatile uint32_t u32Timeout = FLASH_TIMEOUT;
+
+    /* Range: only the parameter sector */
+    if ((u32SectorAddr < BOOT_PARAM_SECTOR_START) ||
+        ((u32SectorAddr + FLASH_SECTOR_SIZE - 1u) > BOOT_PARAM_SECTOR_END))
+    {
+        return ErrorInvalidParameter;
+    }
 
     if (FLASH_END_ADDR < u32SectorAddr)
     {
