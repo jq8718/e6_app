@@ -197,7 +197,7 @@ void Ctim0_IRQHandler(void)
         STK_AIM_ON(); /* AIM点亮 */
        // STK_LED_OFF(); /* 补光关闭 */
         BTIM_CounterSet(BTIM1,0);
-				//Btim1Config(aim_duration_on); /* BTIM1初始化  瞄准灯亮的 时长*/
+				Btim1Config(aim_duration_on); /* BTIM1初始化  瞄准灯亮的 时长*/
         BTIM_Enable(BTIM1);
 
         BTIM_Disable(BTIM0);
@@ -226,7 +226,7 @@ void PortA_IRQHandler(void)
     {
         GPIO_IntFlagClear(STK_EVSYNC_PORT, STK_EVSYNC_PIN); /* 清除中断标志位 */
         BTIM_CounterSet(BTIM0,0);
-				//Btim0Config(aim_delay_on); /* BTIM0初始化  帧同步后延时 时长*/
+				Btim0Config(aim_delay_on); /* BTIM0初始化  帧同步后延时 时长*/
         BTIM_Enable(BTIM0); /* 启动BTIM0运行 */
     }
 }

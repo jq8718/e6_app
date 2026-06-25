@@ -121,7 +121,7 @@ extern "C" {
 /*===================================================================
  *  APP Firmware Version
  *===================================================================*/
-#define APP_FW_VERSION        (0x0100u) /* APP MCU firmware version (v1.0) */
+#define APP_FW_VERSION        (0x0101u) /* APP MCU firmware version (v1.1) */
 #define FW_VERSION_APP_MASK   (0x0000u) /* APP identifier in REG_FW_VERSION_HIGH */
 
 /*******************************************************************************

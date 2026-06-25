@@ -541,8 +541,8 @@ void IAP_APP_Task(void)
             fill_duration_on = (uint16_t)(s_au8RegFile[REG_FILL_DURATION_LOW]) |
                                ((uint16_t)(s_au8RegFile[REG_FILL_DURATION_HIGH]) << 8);
             /* Re-configure timers with new values (applied on next frame sync) */
-            Btim0Config(aim_delay_on);
-            Btim1Config(aim_duration_on);
+           // Btim0Config(aim_delay_on);
+           // Btim1Config(aim_duration_on);
         }
     }
 
